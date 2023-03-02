@@ -1,0 +1,12 @@
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\bin\Debug\net7.0\ProjetoPousada.IoC.deps.json
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\bin\Debug\net7.0\ProjetoPousada.IoC.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\bin\Debug\net7.0\ProjetoPousada.IoC.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.csproj.AssemblyReference.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.AssemblyInfoInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.AssemblyInfo.cs
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.csproj.CoreCompileInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\refint\ProjetoPousada.IoC.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ProjetoPousada.IoC.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IoC\obj\Debug\net7.0\ref\ProjetoPousada.IoC.dll

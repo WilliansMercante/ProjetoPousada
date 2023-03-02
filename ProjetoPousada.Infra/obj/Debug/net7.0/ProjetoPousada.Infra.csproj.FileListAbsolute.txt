@@ -1,0 +1,15 @@
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\bin\Debug\net7.0\ProjetoPousada.Infra.deps.json
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\bin\Debug\net7.0\ProjetoPousada.Infra.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\bin\Debug\net7.0\ProjetoPousada.Infra.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\bin\Debug\net7.0\ProjetoPousada.Dominio.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\bin\Debug\net7.0\ProjetoPousada.Dominio.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.csproj.AssemblyReference.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.AssemblyInfoInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.AssemblyInfo.cs
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.csproj.CoreCompileInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.csproj.CopyComplete
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\refint\ProjetoPousada.Infra.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ProjetoPousada.Infra.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Infra\obj\Debug\net7.0\ref\ProjetoPousada.Infra.dll

@@ -1,0 +1,12 @@
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\bin\Debug\net7.0\ProjetoPousada.ViewModel.deps.json
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\bin\Debug\net7.0\ProjetoPousada.ViewModel.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\bin\Debug\net7.0\ProjetoPousada.ViewModel.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.csproj.AssemblyReference.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.AssemblyInfoInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.AssemblyInfo.cs
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.csproj.CoreCompileInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\refint\ProjetoPousada.ViewModel.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ProjetoPousada.ViewModel.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.ViewModel\obj\Debug\net7.0\ref\ProjetoPousada.ViewModel.dll

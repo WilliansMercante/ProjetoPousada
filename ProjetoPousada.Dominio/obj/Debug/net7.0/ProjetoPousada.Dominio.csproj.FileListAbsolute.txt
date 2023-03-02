@@ -1,0 +1,12 @@
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\bin\Debug\net7.0\ProjetoPousada.Dominio.deps.json
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\bin\Debug\net7.0\ProjetoPousada.Dominio.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\bin\Debug\net7.0\ProjetoPousada.Dominio.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.csproj.AssemblyReference.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.AssemblyInfoInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.AssemblyInfo.cs
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.csproj.CoreCompileInputs.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\refint\ProjetoPousada.Dominio.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ProjetoPousada.Dominio.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.Dominio\obj\Debug\net7.0\ref\ProjetoPousada.Dominio.dll
