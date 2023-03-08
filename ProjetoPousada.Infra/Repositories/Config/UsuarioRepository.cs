@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 
 using ProjetoPousada.Dominio.Entidades.Config;
 using ProjetoPousada.Dominio.Entidades.Proxy;
-using ProjetoPousada.Dominio.Interfaces.Config.Interfaces;
+using ProjetoPousada.Dominio.Interfaces.Config;
 using ProjetoPousada.Infra.Contexts;
 using ProjetoPousada.Infra.Extensions;
 

@@ -3,7 +3,7 @@
 using ProjetoPousada.Aplicacao.Config.Interfaces;
 using ProjetoPousada.Aplicacao.Mapper;
 using ProjetoPousada.Dominio.Entidades.Config;
-using ProjetoPousada.Dominio.Interfaces.Config.Interfaces;
+using ProjetoPousada.Dominio.Interfaces.Config;
 using ProjetoPousada.ViewModel.Config;
 
 namespace ProjetoPousada.Aplicacao.Config

@@ -1,6 +1,6 @@
 ﻿using ProjetoPousada.Dominio.Entidades.Config;
 
-namespace ProjetoPousada.Dominio.Interfaces.Config.Interfaces
+namespace ProjetoPousada.Dominio.Interfaces.Config
 {
     public interface IMenuItemRepository : IRepositoryBase<MenuItemEntity>
     {

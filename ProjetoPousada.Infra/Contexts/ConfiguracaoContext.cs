@@ -15,11 +15,21 @@ namespace ProjetoPousada.Infra.Contexts
 
         }
 
+        #region Config
+
         public DbSet<MenuItemEntity> MenuItem { get; set; }
         public DbSet<PermissaoMenuItemEntity> PermissaoMenuItem { get; set; }
         public DbSet<ParametroEntity> Parametro { get; set; }
-        public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }
+        public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }        
+
+        #endregion
+
+
+        #region Log
+
         public DbSet<LogEntity> Log { get; set; }
+
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

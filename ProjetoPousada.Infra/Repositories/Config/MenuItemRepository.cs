@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using ProjetoPousada.Dominio.Entidades.Config;
-using ProjetoPousada.Dominio.Interfaces.Config.Interfaces;
+using ProjetoPousada.Dominio.Interfaces.Config;
 using ProjetoPousada.Infra.Contexts;
 
 namespace ProjetoPousada.Infra.Repositories.Config

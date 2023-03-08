@@ -3,7 +3,7 @@
 using ProjetoPousada.Aplicacao.Config;
 using ProjetoPousada.Aplicacao.Config.Interfaces;
 using ProjetoPousada.Dominio.Interfaces;
-using ProjetoPousada.Dominio.Interfaces.Config.Interfaces;
+using ProjetoPousada.Dominio.Interfaces.Config;
 using ProjetoPousada.Infra;
 using ProjetoPousada.Infra.Contexts;
 using ProjetoPousada.Infra.Repositories.Config;
@@ -14,8 +14,7 @@ namespace ProjetoPousada.IoC
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            AddRepositories(services);
-            AddServices(services);
+            AddRepositories(services);           
             AddApplication(services);
         }
 
@@ -27,11 +26,7 @@ namespace ProjetoPousada.IoC
             services.AddScoped<IUsuarioApp, UsuarioApp>();
 
             #endregion
-        }
-
-        private static void AddServices(IServiceCollection services)
-        {
-        }
+        }       
 
         private static void AddRepositories(IServiceCollection services)
         {

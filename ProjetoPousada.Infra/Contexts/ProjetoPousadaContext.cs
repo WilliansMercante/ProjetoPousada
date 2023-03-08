@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using ProjetoPousada.Dominio.Entidades.Config;
-using ProjetoPousada.Dominio.Entidades.Log;
+using ProjetoPousada.Dominio.Entidades.Cadastro;
 using ProjetoPousada.Dominio.Interfaces;
-using ProjetoPousada.Infra.Mappings.Config;
-using ProjetoPousada.Infra.Mappings.Log;
+using ProjetoPousada.Infra.Mappings.Cadastro;
 
 namespace ProjetoPousada.Infra.Contexts
 {
@@ -15,19 +13,23 @@ namespace ProjetoPousada.Infra.Contexts
 
         }
 
-        public DbSet<MenuItemEntity> MenuItem { get; set; }
-        public DbSet<PermissaoMenuItemEntity> PermissaoMenuItem { get; set; }
-        public DbSet<ParametroEntity> Parametro { get; set; }
-        public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }
-        public DbSet<LogEntity> Log { get; set; }
+        #region Cadastro
+
+        public DbSet<ClienteEntity> Cliente { get; set; }
+        public DbSet<EnderecoEntity> Endereco { get; set; }
+        public DbSet<TelefoneEntity> Telefone { get; set; }
+        public DbSet<TipoEnderecoEntity> TipoEndereco { get; set; }
+        public DbSet<TipoTelefoneEntity> TipoTelefone { get; set; }
+
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new MenuItemMapping());
-            modelBuilder.ApplyConfiguration(new PermissaoMenuItemMapping());
-            modelBuilder.ApplyConfiguration(new ParametroMapping());
-            modelBuilder.ApplyConfiguration(new ParametroGrupoMapping());
-            modelBuilder.ApplyConfiguration(new LogMapping());
+            modelBuilder.ApplyConfiguration(new ClienteMapping());
+            modelBuilder.ApplyConfiguration(new EnderecoMapping());
+            modelBuilder.ApplyConfiguration(new TelefoneMapping());
+            modelBuilder.ApplyConfiguration(new TipoEnderecoMapping());
+            modelBuilder.ApplyConfiguration(new TipoTelefoneMapping());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -37,5 +39,4 @@ namespace ProjetoPousada.Infra.Contexts
             SaveChanges();
         }
     }
-
 }
