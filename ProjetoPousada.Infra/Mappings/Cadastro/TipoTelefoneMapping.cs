@@ -14,7 +14,7 @@ namespace ProjetoPousada.Infra.Mappings.Cadastro
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id).HasColumnName("ID_TIPO_TELEFONE");
-            builder.Property(p => p.TipoTelefone).HasColumnName("DS_TELEFONE");
+            builder.Property(p => p.Tipo).HasColumnName("DS_TELEFONE");
             builder.Property(p => p.FlAtivo).HasColumnName("FL_ATIVO");
         }
     }

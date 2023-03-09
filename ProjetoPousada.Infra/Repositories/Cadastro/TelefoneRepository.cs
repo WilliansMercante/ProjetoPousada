@@ -17,11 +17,10 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
             Atualizar(oTelefoneEntity);
         }
 
-        public IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente)
+        public IEnumerable<TelefoneEntity> ListarPorCliente(int IdCliente)
         {
-            var lstEnderecoEntity = _context.Endereco.Where(p => p.IdCliente.Equals(IdCliente));
+            var lstEnderecoEntity = _context.Telefone.Where(p => p.IdCliente.Equals(IdCliente));
             return lstEnderecoEntity;
         }
-
     }
 }
