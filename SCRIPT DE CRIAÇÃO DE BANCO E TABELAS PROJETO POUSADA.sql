@@ -202,3 +202,49 @@ FL_ATIVO BIT NOT NULL CONSTRAINT DF_TB_USUARIO_FL_ATIVO DEFAULT 1
 CONSTRAINT PK_TB_USUARIO_ID_USUARIO PRIMARY KEY (ID_USUARIO)
 
 )
+
+CREATE SCHEMA [historico]
+GO
+/****** Object:  Table [historico].[TB_LOG]    Script Date: 09/03/2023 12:18:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [historico].[TB_LOG](
+	[ID_LOG] [int] IDENTITY(1,1) NOT NULL,
+	[ID_USUARIO] [int] NOT NULL,
+	[ESCOPO] [varchar](500) NOT NULL,
+	[ID_REGISTRO] [int] NOT NULL,
+	[TP_OPERACAO] [varchar](20) NOT NULL,
+	[DT_CADASTRO] [datetime] NULL,
+	[VALORES_ANTIGOS] [varchar](max) NULL,
+	[VALORES_NOVOS] [varchar](max) NULL,
+	[PROPRIEDADES_ALTERADAS] [varchar](max) NULL,
+ CONSTRAINT [PK_TB_LOG_ID_LOG] PRIMARY KEY CLUSTERED 
+(
+	[ID_LOG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 95) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [historico].[TB_LOG] ADD  CONSTRAINT [DF_TB_LOG_DT_CADASTRO]  DEFAULT (getdate()) FOR [DT_CADASTRO]
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Código interno gerado automaticamente para identificação do registro' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'ID_LOG'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Código do usuário' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'ID_USUARIO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Nome da entidade onde está sendo realizada a operação' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'ESCOPO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Código do registro na entidade/tabela' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'ID_REGISTRO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Tipo de operação que está sendo realizada' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'TP_OPERACAO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Data da operação' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'DT_CADASTRO'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Valores antigos das propriedades/campos' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'VALORES_ANTIGOS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Novos valores das propriedade/campos' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'VALORES_NOVOS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Propriedades que foram alteradas' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG', @level2type=N'COLUMN',@level2name=N'PROPRIEDADES_ALTERADAS'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Armazena os logs das operações realizadas nas entidades do sistema (Insert/Update/Delete)' , @level0type=N'SCHEMA',@level0name=N'historico', @level1type=N'TABLE',@level1name=N'TB_LOG'
+GO

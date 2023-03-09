@@ -10,5 +10,11 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
         {
         }
 
+        public void Inativar(int id)
+        {
+            var oClienteEntity = _context.Cliente.FirstOrDefault(p => p.Id.Equals(id));
+            oClienteEntity.FlAtivo = false;
+            Atualizar(oClienteEntity);
+        }
     }
 }

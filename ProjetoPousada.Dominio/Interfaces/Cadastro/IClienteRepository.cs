@@ -9,5 +9,6 @@ namespace ProjetoPousada.Dominio.Interfaces.Cadastro
         ClienteEntity ConsultarPorId(int id);
         void Excluir(int id);
         IEnumerable<ClienteEntity> Listar();
+        void Inativar(int id);
     }
 }

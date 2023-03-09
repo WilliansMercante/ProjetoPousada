@@ -10,5 +10,17 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
         {
         }
 
+        public void Inativar(int id)
+        {
+            var enderecoDM = _context.Endereco.FirstOrDefault(p => p.Id.Equals(id));
+            enderecoDM.FlAtivo = false;
+            Atualizar(enderecoDM);
+        }
+
+        public IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente)
+        {
+            var lstEnderecoEntity = _context.Endereco.Where(p => p.IdCliente.Equals(IdCliente));
+            return lstEnderecoEntity;
+        }
     }
 }

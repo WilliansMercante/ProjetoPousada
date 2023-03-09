@@ -10,5 +10,18 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
         {
         }
 
+        public void Inativar(int id)
+        {
+            var oTelefoneEntity = _context.Telefone.FirstOrDefault(p => p.Id.Equals(id));
+            oTelefoneEntity.FlAtivo = false;
+            Atualizar(oTelefoneEntity);
+        }
+
+        public IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente)
+        {
+            var lstEnderecoEntity = _context.Endereco.Where(p => p.IdCliente.Equals(IdCliente));
+            return lstEnderecoEntity;
+        }
+
     }
 }

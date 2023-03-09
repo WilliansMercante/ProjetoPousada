@@ -9,5 +9,7 @@ namespace ProjetoPousada.Dominio.Interfaces.Cadastro
         EnderecoEntity ConsultarPorId(int id);
         void Excluir(int id);
         IEnumerable<EnderecoEntity> Listar();
+        IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente);
+        public void Inativar(int id);
     }
 }
