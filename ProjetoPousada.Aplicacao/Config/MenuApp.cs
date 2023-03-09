@@ -18,7 +18,6 @@ namespace ProjetoPousada.Aplicacao.Config
             _menuItemRepository = menuItemRepository;
         }
 
-
         public IEnumerable<MenuViewModel> ListarPorGrupo(int idGrupo)
         {
             var lstItensMenuPrincipalEntity = _menuItemRepository.ListarPorGrupo(idGrupo);
