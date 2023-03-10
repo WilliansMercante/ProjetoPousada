@@ -8,6 +8,7 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces
         void Atualizar(ClienteViewModel obj);
         ClienteViewModel ConsultarPorId(int id);
         IEnumerable<ClienteViewModel> Listar();
+        IEnumerable<ClienteViewModel> ListarUltimos20();
         void Inativar(int id);
     }
 }

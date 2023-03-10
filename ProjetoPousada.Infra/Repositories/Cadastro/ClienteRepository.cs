@@ -16,5 +16,11 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
             oClienteEntity.FlAtivo = false;
             Atualizar(oClienteEntity);
         }
+
+        public IEnumerable<ClienteEntity> ListarUltimos20()
+        {
+            var lstClienteEntity = _context.Cliente.OrderByDescending(p => p.DtCadastro).Take(20);
+            return lstClienteEntity;
+        }
     }
 }

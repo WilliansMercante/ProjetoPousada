@@ -12,6 +12,7 @@ using System.Security.Claims;
 
 namespace ProjetoPousada.IU.Web.Controllers
 {
+    [Route("[controller]")]
     public class AutenticarController : BaseController
     {
         private readonly IUsuarioApp _usuarioApp;
@@ -26,8 +27,8 @@ namespace ProjetoPousada.IU.Web.Controllers
             _menuApp = menuApp;
         }
 
-        [AllowAnonymous]
         [HttpGet]
+        [Route("Index")]
         public IActionResult Index()
         {
             return View(new LoginViewModel());

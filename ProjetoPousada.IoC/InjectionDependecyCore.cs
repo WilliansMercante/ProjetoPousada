@@ -7,6 +7,8 @@ using ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces;
 using ProjetoPousada.Dominio.Interfaces;
 using ProjetoPousada.Dominio.Interfaces.Cadastro;
 using ProjetoPousada.Dominio.Interfaces.Config;
+using ProjetoPousada.Dominio.Services;
+using ProjetoPousada.Dominio.Services.Interfaces;
 using ProjetoPousada.Infra;
 using ProjetoPousada.Infra.Contexts;
 using ProjetoPousada.Infra.Repositories.Cadastro;
@@ -20,6 +22,7 @@ namespace ProjetoPousada.IoC
         {
             AddRepositories(services);
             AddApplication(services);
+            AddService(services);
         }
 
         private static void AddApplication(IServiceCollection services)
@@ -34,6 +37,11 @@ namespace ProjetoPousada.IoC
             services.AddScoped<IClienteApp, ClienteApp>();
             services.AddScoped<IEnderecoApp, EnderecoApp>();
             services.AddScoped<ITelefoneApp, TelefoneApp>();
+        }
+
+        private static void AddService(IServiceCollection services)
+        {
+            services.AddScoped<IAutenticarService, AutenticarService>();
         }
 
         private static void AddRepositories(IServiceCollection services)

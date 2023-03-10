@@ -217,6 +217,71 @@
         }
       }
     },
+    "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj",
+        "projectName": "ProjetoPousada.IoC",
+        "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj",
+        "packagesPath": "C:\\Users\\015102749\\.nuget\\packages\\",
+        "outputPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\015102749\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Aplicacao\\ProjetoPousada.Aplicacao.csproj": {
+                "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Aplicacao\\ProjetoPousada.Aplicacao.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\ProjetoPousada.IU.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -246,6 +311,9 @@
               },
               "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Dominio\\ProjetoPousada.Dominio.csproj": {
                 "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Dominio\\ProjetoPousada.Dominio.csproj"
+              },
+              "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj": {
+                "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj"
               },
               "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.ViewModel\\ProjetoPousada.ViewModel.csproj": {
                 "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.ViewModel\\ProjetoPousada.ViewModel.csproj"

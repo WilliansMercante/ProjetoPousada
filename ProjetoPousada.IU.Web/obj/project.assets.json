@@ -3710,6 +3710,20 @@
           "bin/placeholder/ProjetoPousada.Infra.dll": {}
         }
       },
+      "ProjetoPousada.IoC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "ProjetoPousada.Aplicacao": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProjetoPousada.IoC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjetoPousada.IoC.dll": {}
+        }
+      },
       "ProjetoPousada.ViewModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -10627,6 +10641,11 @@
       "path": "../ProjetoPousada.Infra/ProjetoPousada.Infra.csproj",
       "msbuildProject": "../ProjetoPousada.Infra/ProjetoPousada.Infra.csproj"
     },
+    "ProjetoPousada.IoC/1.0.0": {
+      "type": "project",
+      "path": "../ProjetoPousada.IoC/ProjetoPousada.IoC.csproj",
+      "msbuildProject": "../ProjetoPousada.IoC/ProjetoPousada.IoC.csproj"
+    },
     "ProjetoPousada.ViewModel/1.0.0": {
       "type": "project",
       "path": "../ProjetoPousada.ViewModel/ProjetoPousada.ViewModel.csproj",
@@ -10640,6 +10659,7 @@
       "Newtonsoft.Json >= 13.0.2",
       "ProjetoPousada.Aplicacao >= 1.0.0",
       "ProjetoPousada.Dominio >= 1.0.0",
+      "ProjetoPousada.IoC >= 1.0.0",
       "ProjetoPousada.ViewModel >= 1.0.0"
     ]
   },
@@ -10675,6 +10695,9 @@
             },
             "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Dominio\\ProjetoPousada.Dominio.csproj": {
               "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.Dominio\\ProjetoPousada.Dominio.csproj"
+            },
+            "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj": {
+              "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IoC\\ProjetoPousada.IoC.csproj"
             },
             "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.ViewModel\\ProjetoPousada.ViewModel.csproj": {
               "projectPath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.ViewModel\\ProjetoPousada.ViewModel.csproj"

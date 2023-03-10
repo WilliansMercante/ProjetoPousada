@@ -19,6 +19,7 @@ namespace ProjetoPousada.Infra.Mappings.Config
             builder.Property(p => p.DtNascimento).HasColumnName("DT_NASCIMENTO");
             builder.Property(p => p.Email).HasColumnName("DS_EMAIL");
             builder.Property(p => p.DtCadastro).HasColumnName("DT_CADASTRO");
+            builder.Property(p => p.Senha).HasColumnName("DS_SENHA");
             builder.Property(p => p.Ativo).HasColumnName("FL_ATIVO");
         }
     }

@@ -277,3 +277,5 @@ D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\refint\Pro
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPousada.IU.Web.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPousada.IU.Web.genruntimeconfig.cache
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ref\ProjetoPousada.IU.Web.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.pdb

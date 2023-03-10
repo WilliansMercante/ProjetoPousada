@@ -21,6 +21,8 @@ namespace ProjetoPousada.Infra.Contexts
         public DbSet<PermissaoMenuItemEntity> PermissaoMenuItem { get; set; }
         public DbSet<ParametroEntity> Parametro { get; set; }
         public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }        
+        public DbSet<UsuarioEntity> Usuario { get; set; }        
+
 
         #endregion
 
@@ -38,6 +40,7 @@ namespace ProjetoPousada.Infra.Contexts
             modelBuilder.ApplyConfiguration(new ParametroMapping());
             modelBuilder.ApplyConfiguration(new ParametroGrupoMapping());
             modelBuilder.ApplyConfiguration(new LogMapping());
+            modelBuilder.ApplyConfiguration(new UsuarioMapping());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+
+using ProjetoPousada.Infra.Contexts;
+using ProjetoPousada.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ConfiguracaoContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PROJETO_POUSADA")), ServiceLifetime.Scoped);
+builder.Services.AddDbContext<ProjetoPousadaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PROJETO_POUSADA")), ServiceLifetime.Scoped);
+
+InjectionDependencyCore.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
@@ -22,6 +32,12 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller}/{action}/{id?}");
+
+app.MapGet("/", context =>
+{
+    return Task.Run(() => context.Response.Redirect("/Autenticar/Index"));
+});
+
 
 app.Run();
