@@ -22,4 +22,11 @@
     <ProjectReference Include="..\ProjetoPousada.ViewModel\ProjetoPousada.ViewModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Cadastro\Controllers\" />
+    <Folder Include="Areas\Cadastro\Data\" />
+    <Folder Include="Areas\Cadastro\Models\" />
+    <Folder Include="Areas\Cadastro\Views\" />
+  </ItemGroup>
+
 </Project>
