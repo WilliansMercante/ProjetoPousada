@@ -9,6 +9,58 @@
       "PackagePath": "staticwebassets\\assets\\css\\app.css.map"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\.DS_Store",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\.DS_Store"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\fonts\\.gitkeep",
       "PackagePath": "staticwebassets\\assets\\fonts\\.gitkeep"
     },
@@ -49,6 +101,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\photos\\unsplash-3.jpg"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\jquery\\jquery-3.6.4.min.js",
+      "PackagePath": "staticwebassets\\assets\\jquery\\jquery-3.6.4.min.js"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\app.js",
       "PackagePath": "staticwebassets\\assets\\js\\app.js"
     },
@@ -59,6 +115,38 @@
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\app.js.map",
       "PackagePath": "staticwebassets\\assets\\js\\app.js.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\favicon.ico",

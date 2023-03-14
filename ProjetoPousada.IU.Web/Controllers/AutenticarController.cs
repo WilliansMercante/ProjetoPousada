@@ -34,10 +34,10 @@ namespace ProjetoPousada.IU.Web.Controllers
             return View(new LoginViewModel());
         }
 
-        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(LoginViewModel login)
+        [Route("Index")]
+        public IActionResult Index(LoginViewModel login)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace ProjetoPousada.IU.Web.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, oUsuarioVM.Cpf),
-                    new Claim(ClaimTypes.Email, oUsuarioVM.EmailPrincipal ?? string.Empty),
+                    new Claim(ClaimTypes.Email, oUsuarioVM.Email ?? string.Empty),
                     new Claim("Usuario", JsonConvert.SerializeObject(oUsuarioVM)),
                     new Claim("ItensMenuPrincipal", JsonConvert.SerializeObject(lstItensMenuPrincipalVM))
                 };
@@ -63,17 +63,17 @@ namespace ProjetoPousada.IU.Web.Controllers
                     ExpiresUtc = DateTime.Now.AddHours(24),
                 };
 
-                await HttpContext.SignInAsync(
-                    CookieAuthenticationDefaults.AuthenticationScheme,
-                    new ClaimsPrincipal(claimsIdentity),
-                    authProperties);
+                //HttpContext.SignInAsync(
+                //     CookieAuthenticationDefaults.AuthenticationScheme,
+                //     new ClaimsPrincipal(claimsIdentity),
+                //     authProperties);
 
 
-                if (oUsuarioVM.FlPrimeiroAcesso)
-                    return RedirectToAction("Index", "PrimeiroAcesso", new { area = "Login" });
+                if (oUsuarioVM != null)
+                    return RedirectToAction("Index", "Home", new { area = string.Empty });
                 else
                 {
-                    return RedirectToAction("Index", "Home", new { area = string.Empty });
+                    return RedirectToAction("Index", "Autenticar");
                 }
             }
             catch (Exception ex)
@@ -85,11 +85,11 @@ namespace ProjetoPousada.IU.Web.Controllers
 
         [HttpGet]
         [Authorize]
-        public async Task<IActionResult> Logout()
+        public IActionResult Logout()
         {
-            await HttpContext.SignOutAsync();
+            HttpContext.SignOutAsync();
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Autenticar", new { area = "Login" });
+            return RedirectToAction("Index", "Autenticar");
         }
     }
 }

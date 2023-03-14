@@ -3,52 +3,50 @@
     Layout = "_Login";
 }
 
-<main class="d-flex w-100">
-    <div class="container d-flex flex-column">
-        <div class="row vh-100">
-            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
-                <div class="d-table-cell align-middle">
+@using (Html.BeginForm("Index", "Autenticar", FormMethod.Post, new { @class = "form", @id = "frmLogin" }))
+{
+    @Html.AntiForgeryToken()
 
-                    <div class="text-center mt-4">
-                        <h1 class="h2">Bem Vindo</h1>
-                        <p class="lead">
-                            Insira suas credenciais abaixo
-                        </p>
-                    </div>
+    <main class="d-flex w-100">
+        <div class="container d-flex flex-column">
+            <div class="row vh-100">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
 
-                    @using (Html.BeginForm("Index", "Autenticar", FormMethod.Post, new { @class = "form", @id = "frmLogin" }))
-                    {
-                        @Html.AntiForgeryToken()
+                        <div class="text-center mt-4">
+                            <h1 class="h2">Bem Vindo</h1>
+                            <p class="lead">
+                                Insira suas credenciais abaixo
+                            </p>
+                        </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <div class="m-sm-4">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label class="form-label">CPF</label>
-                                            @Html.TextBoxFor(p => p.Cpf, new { @class = "form-control form-control-lg", placeholder = "Informe o número do CPF", @required = "required"})
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Senha</label>
-                                            @Html.PasswordFor(p => p.Senha, new { @class = "form-control form-control-lg", placeholder = "Informe a senha", @required = "required" })
-                                            <small>
-                                                <a href="/Autenticar/Esqueci">Esqueceu a Senha?</a>
-                                            </small>
-                                        </div>
-                                        <div class="text-center mt-3">
-                                            @*<a href="index.html" class="btn btn-lg btn-primary">Entrar</a>*@
-                                            <button type="submit" class="btn btn-lg btn-primary">Entrar</button>
-                                        </div>
-                                    </form>
+                                    <div class="mb-3">
+                                        <label class="form-label">CPF</label>
+                                        @Html.TextBoxFor(p => p.Cpf, new { @class = "form-control form-control-lg", placeholder = "Informe o número do CPF", @required = "required"})
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Senha</label>
+                                        @Html.PasswordFor(p => p.Senha, new { @class = "form-control form-control-lg", placeholder = "Informe a senha", @required = "required" })
+                                        <small>
+                                            <a href="/Autenticar/Esqueci">Esqueceu a Senha?</a>
+                                        </small>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        @*<a href="index.html" class="btn btn-lg btn-primary">Entrar</a>*@
+                                        <button type="submit" class="btn btn-lg btn-primary">Entrar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    }
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-
+    </main>
+}
 <script src="~/assets/js/app.js"></script>

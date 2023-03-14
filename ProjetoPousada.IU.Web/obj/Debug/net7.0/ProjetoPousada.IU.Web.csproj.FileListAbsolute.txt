@@ -1,10 +1,9 @@
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\appsettings.json
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.staticwebassets.runtime.json
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.exe
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.deps.json
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.runtimeconfig.json
-D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.dll
-D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\AutoMapper.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\Azure.Core.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\Azure.Identity.dll
@@ -250,9 +249,11 @@ D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\runtimes\w
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Aplicacao.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Dominio.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Infra.dll
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.ViewModel.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Aplicacao.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Dominio.pdb
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.ViewModel.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.Infra.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPousada.IU.Web.csproj.AssemblyReference.cache
@@ -276,6 +277,5 @@ D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPou
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\refint\ProjetoPousada.IU.Web.dll
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPousada.IU.Web.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ProjetoPousada.IU.Web.genruntimeconfig.cache
+D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IU.Web.pdb
 D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\obj\Debug\net7.0\ref\ProjetoPousada.IU.Web.dll
-D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.dll
-D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web\bin\Debug\net7.0\ProjetoPousada.IoC.pdb

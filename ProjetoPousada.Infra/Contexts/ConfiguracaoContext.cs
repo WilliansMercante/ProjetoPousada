@@ -8,46 +8,45 @@ using ProjetoPousada.Infra.Mappings.Log;
 
 namespace ProjetoPousada.Infra.Contexts
 {
-    public sealed class ConfiguracaoContext : DbContext, IUnitOfWork<ConfiguracaoContext>
-    {
-        public ConfiguracaoContext(DbContextOptions<ConfiguracaoContext> options) : base(options)
-        {
+	public sealed class ConfiguracaoContext : DbContext, IUnitOfWork<ConfiguracaoContext>
+	{
+		public ConfiguracaoContext(DbContextOptions<ConfiguracaoContext> options) : base(options)
+		{
+		}
 
-        }
+		#region Config
 
-        #region Config
+		public DbSet<MenuItemEntity> MenuItem { get; set; }
+		public DbSet<PermissaoMenuItemEntity> PermissaoMenuItem { get; set; }
+		public DbSet<ParametroEntity> Parametro { get; set; }
+		public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }
+		public DbSet<UsuarioEntity> Usuario { get; set; }
+		public DbSet<GrupoEntity> Grupo { get; set; }
 
-        public DbSet<MenuItemEntity> MenuItem { get; set; }
-        public DbSet<PermissaoMenuItemEntity> PermissaoMenuItem { get; set; }
-        public DbSet<ParametroEntity> Parametro { get; set; }
-        public DbSet<ParametroGrupoEntity> ParametroGrupo { get; set; }        
-        public DbSet<UsuarioEntity> Usuario { get; set; }        
+		#endregion
 
+		#region Log
 
-        #endregion
+		public DbSet<LogEntity> Log { get; set; }
 
+		#endregion
 
-        #region Log
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.ApplyConfiguration(new MenuItemMapping());
+			modelBuilder.ApplyConfiguration(new PermissaoMenuItemMapping());
+			modelBuilder.ApplyConfiguration(new ParametroMapping());
+			modelBuilder.ApplyConfiguration(new ParametroGrupoMapping());
+			modelBuilder.ApplyConfiguration(new LogMapping());
+			modelBuilder.ApplyConfiguration(new UsuarioMapping());
+			modelBuilder.ApplyConfiguration(new GrupoMapping());
 
-        public DbSet<LogEntity> Log { get; set; }
+			base.OnModelCreating(modelBuilder);
+		}
 
-        #endregion
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfiguration(new MenuItemMapping());
-            modelBuilder.ApplyConfiguration(new PermissaoMenuItemMapping());
-            modelBuilder.ApplyConfiguration(new ParametroMapping());
-            modelBuilder.ApplyConfiguration(new ParametroGrupoMapping());
-            modelBuilder.ApplyConfiguration(new LogMapping());
-            modelBuilder.ApplyConfiguration(new UsuarioMapping());
-
-            base.OnModelCreating(modelBuilder);
-        }
-
-        public void Commit()
-        {
-            SaveChanges();
-        }
-    }
+		public void Commit()
+		{
+			SaveChanges();
+		}
+	}
 }

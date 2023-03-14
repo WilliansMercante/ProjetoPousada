@@ -3,8 +3,6 @@
     public class GrupoEntity : Entidade
     {
         public string DsGrupo { get; set; }
-        public int IdSistema { get; set; }
-        public bool FlStatus { get; set; }
-
+        public bool FlAtivo { get; set; }
     }
 }

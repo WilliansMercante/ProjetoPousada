@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Newtonsoft.Json;
+@using ProjetoPousada.ViewModel.Config;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+	var menu = HttpContextAccessor.HttpContext.User.Claims.Where(p => p.Type.Equals("ItensMenuPrincipal")).FirstOrDefault().Value;
+	var lstItensMenuPrincipal = JsonConvert.DeserializeObject<IEnumerable<MenuViewModel>>(menu);
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,12 +19,11 @@
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
-	<title>Forms | AdminKit Demo</title>
+	<title>Gerenciamento de Pousada</title>
 
 	<link href="~/assets/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -30,7 +39,7 @@
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
-						Pages
+						Cadastro
 					</li>
 
 					<li class="sidebar-item">
