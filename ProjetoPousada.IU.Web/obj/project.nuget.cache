@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uGasPDSXLgjVjKqizT8sx8nxg/U/eZ1lSVZkm4D1JrdMU0Y5zn5Bb5jpTfKiif0O2ukTWl6WlxFMEgcOj0w+OA==",
+  "dgSpecHash": "+KRTogiZGVHhRrsgYQbrWKE1Rwpb4mmFQIIqQ7yqWgmYfeZkU0CqyoywCcqAm0wy3DE0Y5p2ZlDQICKppJk8pA==",
   "success": true,
   "projectFilePath": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\ProjetoPousada.IU.Web.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\015102749\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\015102749\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\015102749\\.nuget\\packages\\jsondiffpatch.net\\2.3.0\\jsondiffpatch.net.2.3.0.nupkg.sha512",
+    "C:\\Users\\015102749\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.4\\microsoft.aspnetcore.authentication.jwtbearer.7.0.4.nupkg.sha512",
     "C:\\Users\\015102749\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\015102749\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\015102749\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

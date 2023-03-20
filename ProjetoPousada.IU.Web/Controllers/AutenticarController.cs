@@ -37,7 +37,7 @@ namespace ProjetoPousada.IU.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Index")]
-        public IActionResult Index(LoginViewModel login)
+		public async Task<IActionResult> Index(LoginViewModel login)
         {
             try
             {
@@ -63,13 +63,13 @@ namespace ProjetoPousada.IU.Web.Controllers
                     ExpiresUtc = DateTime.Now.AddHours(24),
                 };
 
-                //HttpContext.SignInAsync(
-                //     CookieAuthenticationDefaults.AuthenticationScheme,
-                //     new ClaimsPrincipal(claimsIdentity),
-                //     authProperties);
+				await HttpContext.SignInAsync(
+					CookieAuthenticationDefaults.AuthenticationScheme,
+					new ClaimsPrincipal(claimsIdentity),
+					authProperties);
 
 
-                if (oUsuarioVM != null)
+				if (oUsuarioVM != null)
                     return RedirectToAction("Index", "Home", new { area = string.Empty });
                 else
                 {
