@@ -8,7 +8,7 @@ namespace ProjetoPousada.Infra.Contexts
 {
     public sealed class ProjetoPousadaContext : DbContext, IUnitOfWork<ProjetoPousadaContext>
     {
-        public ProjetoPousadaContext(DbContextOptions<ConfiguracaoContext> options) : base(options)
+        public ProjetoPousadaContext(DbContextOptions<ProjetoPousadaContext> options) : base(options)
         {
 
         }

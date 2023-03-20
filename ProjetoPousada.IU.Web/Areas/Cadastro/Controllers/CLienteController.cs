@@ -6,8 +6,8 @@ using ProjetoPousada.IU.Web.Controllers;
 
 namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 {
-	[Area("Cliente")]
-	[Route("Cliente/[controller]")]
+	[Area("Cadastro")]
+	[Route("Cadastro/[controller]")]
 	public class ClienteController : BaseController
 	{
 		private readonly IClienteApp _clienteApp;

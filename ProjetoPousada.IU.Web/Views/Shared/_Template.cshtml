@@ -36,7 +36,7 @@
 
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="index.html">
+                <a class="sidebar-brand" href="/Home/Index/">
                     <span class="align-middle">Sistema de Gerenciamento</span>
                 </a>
                 @foreach (var itens in lstItensMenuPrincipal)
@@ -51,7 +51,7 @@
                             @foreach (var subItem in itens.SubItens)
                             {
                                 <li class="sidebar-item">
-                                    <a class="sidebar-link" href="index.html">
+                                    <a class="sidebar-link" href="@Url.ActionLink(subItem.NmAction, subItem.NmController, new { Area = subItem.NmArea })">
                                         <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">@subItem.NmItem</span>
                                     </a>
                                 </li>
