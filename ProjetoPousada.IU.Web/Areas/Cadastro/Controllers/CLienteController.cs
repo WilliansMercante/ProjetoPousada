@@ -3,6 +3,7 @@
 using ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces;
 using ProjetoPousada.IU.Web.Areas.Cadastro.ViewModels.Cliente;
 using ProjetoPousada.IU.Web.Controllers;
+using ProjetoPousada.ViewModel.Cadastro;
 
 namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 {
@@ -34,7 +35,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
 			try
 			{
-				indexVM.Clientes = _clienteApp.ListarUltimos20();
+				indexVM.Clientes = _clienteApp.ListarUltimos20Ativos();
 			}
 			catch (Exception ex)
 			{
@@ -43,5 +44,23 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
 			return View(indexVM);
 		}
-	}
+
+        [HttpPost]
+        [Route("Pesquisar/{nome}/{cpf}/{dtNascimento}/")]
+        public JsonResult Pesquisar(string nome, string cpf, DateTime dtNascimento)
+        {
+            IEnumerable<ClienteViewModel> lstClientesVM = new List<ClienteViewModel>();
+
+            try
+            {
+                lstClientesVM = _clienteApp.Consultar(nome, cpf, dtNascimento);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { flSucesso = false, mensagem = ex.Message });
+            }
+
+            return Json(new { flSucesso = true, lstClientes = lstClientesVM });
+        }
+    }
 }

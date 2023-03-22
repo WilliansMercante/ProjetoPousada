@@ -58,11 +58,17 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
-        public IEnumerable<ClienteViewModel> ListarUltimos20()
+        public IEnumerable<ClienteViewModel> ListarUltimos20Ativos()
         {
-            var lstClienteEntity = _ClienteRepository.ListarUltimos20();
+            var lstClienteEntity = _ClienteRepository.ListarUltimos20Ativos();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
+        }
+        public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime dtNascimento)
+        {
+            var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);
+            var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
+            return lstClienteViewModel; ;
         }
     }
 }

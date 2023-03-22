@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox\\bootbox.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox\\bootbox.min.js"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\app.css",
       "PackagePath": "staticwebassets\\assets\\css\\app.css"
     },
@@ -147,6 +151,18 @@
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\cliente\\index.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\cliente\\index.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\requisicao.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\requisicao.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\moment\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\moment\\moment.min.js"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\favicon.ico",
