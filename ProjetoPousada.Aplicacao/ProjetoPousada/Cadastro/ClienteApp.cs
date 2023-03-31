@@ -64,7 +64,7 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
-        public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime dtNascimento)
+        public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento)
         {
             var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);

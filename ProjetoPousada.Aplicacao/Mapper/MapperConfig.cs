@@ -34,6 +34,7 @@ namespace ProjetoPousada.Aplicacao.Mapper
             cfg.CreateMap<TipoEnderecoEntity, TipoEnderecoViewModel>().ReverseMap();
             cfg.CreateMap<TelefoneEntity, TelefoneViewModel>().ReverseMap();
             cfg.CreateMap<TipoTelefoneEntity, TipoTelefoneViewModel>().ReverseMap();
+            cfg.CreateMap<SexoEntity, SexoViewModel>().ReverseMap();
         }
 
     }

@@ -8,6 +8,8 @@
         public string Rg { get; set; }
         public DateTime DtCadastro { get; set; }
         public bool FlAtivo { get; set; }
+        public int IdSexo { get; set; }
+        public SexoEntity Sexo { get; set; }
 
         public ICollection<EnderecoEntity> Enderecos { get; set; }
         public ICollection<TelefoneEntity> Telefones { get; set; }

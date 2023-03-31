@@ -7,6 +7,7 @@
     var lstItensMenuPrincipal = JsonConvert.DeserializeObject<IEnumerable<MenuViewModel>>(menu);
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +18,16 @@
     <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
     <meta name="author" content="AdminKit">
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
+    <link href="~/assets/css/loading.css" rel="stylesheet" />
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
     <title>Gerenciamento de Pousada</title>
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.css.map"/>
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.min.css.map"/>
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.css" rel="stylesheet" />
 
     <link href="~/assets/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -97,10 +102,15 @@
             </main>
 
             <partial name="_Modal" />
-
-            <script src="~/assets/jquery/jquery-3.6.4.min.js"></script>
-            <script src="~/assets/bootbox/bootbox.min.js"></script>
-
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src='https://unpkg.com/@@popperjs/core@2'></script>
+            <script src="~/assets/js/bootstrap4.1.3/bootstrap.min.js"></script>
+            <script src="~/assets/bootbox5/bootbox.min.js"></script>
+            <script src="~/assets/bootbox5/bootbox.locales.js"></script>
+            <script src="~/assets/bootbox5/bootbox.locales.min.js"></script>
+            <script src="~/assets/bootbox5/bootbox.all.js"></script>
+            <script src="~/assets/bootbox5/bootbox.all.min.js"></script>
+            <script src="~/assets/bootbox5/bootbox.js"></script>
             <div class="loading">
                 <div class="loader"></div>
                 <div class="texto">Aguarde</div>
@@ -122,6 +132,28 @@
 
     <script src="~/assets/js/app.js"></script>
 
+    <script type="text/javascript">
+        $(window).on('load',function () {
+            // Animate loader off screen
+            $(".loading").fadeOut("slow");
+            $('#main-container').addClass("slideUp");
+        });
+
+        $(document).submit(function (event) {
+            $(".loading").fadeIn();
+            $("body").fadeOut("slow")
+        });
+
+        window.addEventListener('load', function () {
+            $(".loading").fadeOut("slow");
+            $('#main-container').addClass("slideUp");
+        });
+
+        $(".logout").off("click").on("click", function () {
+            $(".loading").fadeIn();
+            $("body").fadeOut("slow");
+        });
+        </script>
 
     @RenderSection("JS", required: false)
 

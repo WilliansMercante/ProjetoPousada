@@ -9,6 +9,8 @@
         public string Rg { get; set; }
         public DateTime DtCadastro { get; set; }
         public bool FlAtivo { get; set; }
+        public int IdSexo { get; set; }
+        public SexoViewModel Sexo { get; set; }
 
         public ICollection<EnderecoViewModel> Enderecos { get; set; }
         public ICollection<TelefoneViewModel> Telefones { get; set; }

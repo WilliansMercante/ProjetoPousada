@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 using ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces;
 using ProjetoPousada.IU.Web.Areas.Cadastro.ViewModels.Cliente;
@@ -7,47 +8,51 @@ using ProjetoPousada.ViewModel.Cadastro;
 
 namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 {
-	[Area("Cadastro")]
-	[Route("Cadastro/[controller]")]
-	public class ClienteController : BaseController
-	{
-		private readonly IClienteApp _clienteApp;
-		private readonly ITelefoneApp _telefoneApp;
-		private readonly IEnderecoApp _enderecoApp;
+    [Area("Cadastro")]
+    [Route("Cadastro/[controller]")]
+    public class ClienteController : BaseController
+    {
+        private readonly IClienteApp _clienteApp;
+        private readonly ITelefoneApp _telefoneApp;
+        private readonly IEnderecoApp _enderecoApp;
+        private readonly ISexoApp _sexoApp;
 
-		public ClienteController
-		(
-			IClienteApp clienteApp,
-			ITelefoneApp telefoneApp,
-			 IEnderecoApp enderecoApp
-		)
-		{
-			_clienteApp = clienteApp;
-			_telefoneApp = telefoneApp;
-			_enderecoApp = enderecoApp;
-		}
+        public ClienteController
+        (
+            IClienteApp clienteApp,
+            ITelefoneApp telefoneApp,
+            IEnderecoApp enderecoApp,
+            ISexoApp sexoApp
 
-		[HttpGet]
-		[Route("Index")]
-		public IActionResult Index()
-		{
-			IndexViewModel indexVM = new IndexViewModel();
+        )
+        {
+            _clienteApp = clienteApp;
+            _telefoneApp = telefoneApp;
+            _enderecoApp = enderecoApp;
+            _sexoApp = sexoApp;
+        }
 
-			try
-			{
-				indexVM.Clientes = _clienteApp.ListarUltimos20Ativos();
-			}
-			catch (Exception ex)
-			{
-				ExibirMensagem(ex.Message, TipoMensagem.Erro);
-			}
+        [HttpGet]
+        [Route("Index")]
+        public IActionResult Index()
+        {
+            IndexViewModel indexVM = new IndexViewModel();
 
-			return View(indexVM);
-		}
+            try
+            {
+                indexVM.Clientes = _clienteApp.ListarUltimos20Ativos();
+            }
+            catch (Exception ex)
+            {
+                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+            }
+
+            return View(indexVM);
+        }
 
         [HttpPost]
-        [Route("Pesquisar/{nome}/{cpf}/{dtNascimento}/")]
-        public JsonResult Pesquisar(string nome, string cpf, DateTime dtNascimento)
+        [Route("Pesquisar")]
+        public JsonResult Pesquisar(string nome, string cpf, DateTime? dtNascimento)
         {
             IEnumerable<ClienteViewModel> lstClientesVM = new List<ClienteViewModel>();
 
@@ -62,5 +67,24 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
             return Json(new { flSucesso = true, lstClientes = lstClientesVM });
         }
+
+        [HttpGet]
+        [Route("Cadastro")]
+        public PartialViewResult Cadastro()
+        {
+            CadastroViewModel CadastroVM = new CadastroViewModel();
+
+            try
+            {
+                CadastroVM.Sexos = new SelectList(_sexoApp.Listar(), "Id", "Sexo").ToList();
+            }
+            catch (Exception ex)
+            {
+                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+            }
+
+            return PartialView("_Cadastro", CadastroVM);
+        }
+
     }
 }

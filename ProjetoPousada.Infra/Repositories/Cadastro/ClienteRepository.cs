@@ -13,7 +13,7 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
         {
         }
 
-        public IEnumerable<ClienteEntity> Consultar(string nome, string cpf, DateTime dtNascimento)
+        public IEnumerable<ClienteEntity> Consultar(string nome, string cpf, DateTime? dtNascimento)
         {
 
             var query = _context.Cliente.AsQueryable();
@@ -28,12 +28,12 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
                 query = query.Where(p => p.CPF == cpf);
             }
 
-            if (dtNascimento != DateTime.MinValue)
+            if (dtNascimento.HasValue && dtNascimento != DateTime.MinValue)
             {
                 query = query.Where(p => p.DtNascimento == dtNascimento);
             }
 
-            var resultado = query.AsEnumerable();
+            var resultado = query.Include(p => p.Sexo).AsEnumerable();
 
             return resultado;
         }
@@ -48,7 +48,7 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
 
         public IEnumerable<ClienteEntity> ListarUltimos20Ativos()
         {
-            var lstClienteEntity = _context.Cliente.Where(p => p.FlAtivo).OrderByDescending(p => p.DtCadastro).Take(20);
+            var lstClienteEntity = _context.Cliente.Include(p => p.Sexo).Where(p => p.FlAtivo).OrderByDescending(p => p.DtCadastro).Take(20);
             return lstClienteEntity;
         }
 

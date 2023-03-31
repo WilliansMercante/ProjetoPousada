@@ -1,8 +1,28 @@
 {
   "Files": [
     {
-      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox\\bootbox.min.js",
-      "PackagePath": "staticwebassets\\assets\\bootbox\\bootbox.min.js"
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.all.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.all.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.all.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.all.min.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.locales.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.locales.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.locales.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.locales.min.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\bootbox5\\bootbox.min.js",
+      "PackagePath": "staticwebassets\\assets\\bootbox5\\bootbox.min.js"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\app.css",
@@ -63,6 +83,10 @@
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\loading.css",
+      "PackagePath": "staticwebassets\\assets\\css\\loading.css"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\fonts\\.gitkeep",
@@ -155,6 +179,18 @@
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\cliente\\index.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\cliente\\index.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\ValidacaoCPF.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\ValidacaoCPF.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\formatacaoCPF.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\nuloOuBranco.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\nuloOuBranco.js"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\requisicao.js",

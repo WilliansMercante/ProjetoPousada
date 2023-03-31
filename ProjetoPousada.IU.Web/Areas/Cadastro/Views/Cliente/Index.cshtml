@@ -27,6 +27,7 @@
             @Html.TextBoxFor(p => p.Cliente.Nome,new {@class = "form-control",required = "required",maxlength = "400",placeholder = "Nome"})
         </div>
         <div class="col-md-4">
+            <div id="divAlertaCPF"></div>
             @Html.TextBoxFor(p => p.Cliente.CPF,new {@class = "form-control",required = "required",maxlength = "11",placeholder = "CPF"})
         </div>
         <div class="col-md-2">
@@ -49,6 +50,7 @@
                 <th>Data de Nascimento:</th>
                 <th>Cpf:</th>
                 <th>Rg:</th>
+                <th>Sexo:</th>
                 <th>Ativo:</th>
                 <th>Data de Cadastro:</th>
                 <th>Editar:</th>
@@ -62,6 +64,7 @@
                     <td>@cliente.DtNascimento.ToShortDateString()</td>
                     <td>@cliente.CPF</td>
                     <td>@cliente.Rg</td>
+                    <td>@cliente.Sexo.Sexo</td>
                     @if (cliente.FlAtivo)
                     {
                         <td class="text-center"> <i class="text-center" data-feather="thumbs-up"></i> <span class="text-center"></span></td>
@@ -87,6 +90,7 @@
     {
     <script src="~/assets/moment/moment.min.js"></script>
     <script src="~/assets/js/custom/utils/requisicao.js"></script>
-    <script src="~/assets/js/custom/cadastro/cliente/index.js"></script>
-
+    <script src="~/assets/js/custom/utils/nulooubranco.js"></script>
+    <script src="~/assets/js/custom/utils/validacaocpf.js"></script>
+    <script src="~/assets/js/custom/cadastro/cliente/index.js"></script>    
     }

@@ -20,9 +20,12 @@ namespace ProjetoPousada.Infra.Mappings.Cadastro
             builder.Property(p => p.DtCadastro).HasColumnName("DT_CADASTRO");
             builder.Property(p => p.Rg).HasColumnName("NR_RG");
             builder.Property(p => p.FlAtivo).HasColumnName("FL_ATIVO");
+            builder.Property(p => p.IdSexo).HasColumnName("ID_SEXO");            
 
             builder.HasMany(p => p.Telefones).WithOne().HasForeignKey(p => p.IdCliente);
             builder.HasMany(p => p.Enderecos).WithOne().HasForeignKey(p => p.IdCliente);
+
+            builder.HasOne(p => p.Sexo).WithMany().HasForeignKey(p => p.IdSexo);
         }
     }
 }

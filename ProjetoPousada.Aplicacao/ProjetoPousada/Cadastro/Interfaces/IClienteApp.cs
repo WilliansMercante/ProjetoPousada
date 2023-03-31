@@ -9,7 +9,7 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces
         ClienteViewModel ConsultarPorId(int id);
         IEnumerable<ClienteViewModel> Listar();
         IEnumerable<ClienteViewModel> ListarUltimos20Ativos();
-        IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime dtNascimento);
+        IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento);
         void Inativar(int id);
     }
 }

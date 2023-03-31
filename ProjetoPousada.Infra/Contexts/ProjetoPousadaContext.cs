@@ -20,6 +20,7 @@ namespace ProjetoPousada.Infra.Contexts
         public DbSet<TelefoneEntity> Telefone { get; set; }
         public DbSet<TipoEnderecoEntity> TipoEndereco { get; set; }
         public DbSet<TipoTelefoneEntity> TipoTelefone { get; set; }
+        public DbSet<SexoEntity> Sexo { get; set; }
 
         #endregion
 
@@ -30,6 +31,7 @@ namespace ProjetoPousada.Infra.Contexts
             modelBuilder.ApplyConfiguration(new TelefoneMapping());
             modelBuilder.ApplyConfiguration(new TipoEnderecoMapping());
             modelBuilder.ApplyConfiguration(new TipoTelefoneMapping());
+            modelBuilder.ApplyConfiguration(new SexoMapping());
 
             base.OnModelCreating(modelBuilder);
         }

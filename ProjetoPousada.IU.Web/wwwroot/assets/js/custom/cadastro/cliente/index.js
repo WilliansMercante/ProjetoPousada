@@ -8,6 +8,7 @@
             $("#titulo").text("Cadastrar Cliente");
             $("#modal").modal();
             $(".loading").fadeOut();
+            $('#modal').modal('toggle');
 
         });
     });
@@ -18,25 +19,37 @@
         let cpf = $("#Cliente_CPF").val();
         let dtNascimento = $("#Cliente_DtNascimento").val();
 
-        requisicao("/Cadastro/Cliente/Pesquisar/" + nome + "/" + cpf + "/" + dtNascimento, "POST")
+        let dados = { nome: nome, cpf: cpf, dtNascimento: dtNascimento }
 
-            .done(function (retorno) {
+        if (nome == '' && cpf == '' && dtNascimento == '') {
 
-                if (retorno.flSucesso) {
+            bootbox.alert("Preencha pelo menos uma opção para pesquisar!");
 
-                    preencheTabelaAtendimento(true, retorno.lstClientes);
+        } else if (cpf != '' && !verificaCPF(cpf)) {
 
-                } else {
-                    alert(retorno.mensagem);
-                }
-            })
+            bootbox.alert("CPF Inválido!");
 
+        } else {
+
+            requisicao("/Cadastro/Cliente/Pesquisar/", "POST", dados)
+
+                .done(function (retorno) {
+
+                    if (retorno.flSucesso) {
+
+                        preencheTabelaAtendimento(true, retorno.lstClientes);
+
+                    } else {
+                        alert(retorno.mensagem);
+                    }
+                })
+        }
     });
 
     function preencheTabelaAtendimento(destroy, lst) {
 
         if (destroy) {
-            $("#tbClientes tr").remove();
+            $("#tbClientes tbody tr").remove();
         }
 
         var tabela = $('#tbClientes tbody');
@@ -45,8 +58,6 @@
         $.each(lst, function (i, cliente) {
             // cria uma nova linha para o cliente
             var novaLinha = $('<tr>');
-
-            console.log(cliente);
 
             // adiciona as células da linha com os dados do cliente
             novaLinha.append($('<td>').text(cliente.nome));
@@ -57,13 +68,11 @@
             novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY")));
             novaLinha.append($('<td>').html('<button style="width:40px; height:40px" class="btn btn-warning bd-placeholder-img rounded-circle"><i style="margin-top: -3px" class="align-middle me-2" data-feather="edit"></i></button>'));
 
-
-            console.log(novaLinha);
-
             // adiciona a linha à tabela
             tabela.append(novaLinha);
         });
-    }
 
+        feather.replace();
+    }
 
 });
