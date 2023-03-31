@@ -16,12 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\TestesCSharp\ProjetoPousada\ProjetoPousada.IU.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Areas/Cadastro/Views/Cliente/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FkYXN0cm9cVmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
+[D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Areas/Cadastro/Views/Cliente/Cadastro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FkYXN0cm9cVmlld3NcQ2xpZW50ZVxDYWRhc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Areas/Cadastro/Views/Cliente/_Cadastro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FkYXN0cm9cVmlld3NcQ2xpZW50ZVxfQ2FkYXN0cm8uY3NodG1s
+[D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Areas/Cadastro/Views/Cliente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FkYXN0cm9cVmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Views/Autenticar/Index.cshtml]

@@ -70,7 +70,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
         [HttpGet]
         [Route("Cadastro")]
-        public PartialViewResult Cadastro()
+        public IActionResult Cadastro()
         {
             CadastroViewModel CadastroVM = new CadastroViewModel();
 
@@ -83,8 +83,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
                 ExibirMensagem(ex.Message, TipoMensagem.Erro);
             }
 
-            return PartialView("_Cadastro", CadastroVM);
+            return View("Cadastro", CadastroVM);
         }
-
     }
 }

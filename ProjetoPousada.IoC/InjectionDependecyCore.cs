@@ -70,9 +70,6 @@ namespace ProjetoPousada.IoC
 
             #endregion
 
-
-
-
             services.AddScoped<IUnitOfWork<ProjetoPousadaContext>, UnitOfWork<ProjetoPousadaContext>>();
         }
     }
