@@ -48,6 +48,8 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
         public void Incluir(ClienteViewModel enderecoVM)
         {
             var oClienteEntity = _mapper.Map<ClienteEntity>(enderecoVM);
+            oClienteEntity.DtCadastro = DateTime.Now;
+            oClienteEntity.FlAtivo = true;
             _ClienteRepository.Incluir(oClienteEntity);
             _unitOfWork.Commit();
         }
@@ -69,6 +71,13 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
             var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel; ;
+        }
+
+        public ClienteViewModel ConsultarPorCPF(string cpf)
+        {
+            var oClienteEntity = _ClienteRepository.ConsultarPorCPF(cpf);
+            var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
+            return oClienteViewModel;
         }
     }
 }

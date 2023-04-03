@@ -1,17 +1,6 @@
 ﻿$(document).ready(function () {
 
-    //$("#btnCadastrar").off('click').on('click', function () {
-
-    //    $(".loading").fadeIn();
-
-    //    $("#conteudo").load("/Cadastro/Cliente/Cadastro", function () {
-    //        $("#titulo").text("Cadastrar Cliente");
-    //        $("#modal").modal();
-    //        $(".loading").fadeOut();
-    //        $('#modal').modal('toggle');
-
-    //    });
-    //});
+    
 
     $("#btnPesquisar").off('click').on('click', function () {
 

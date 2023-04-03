@@ -7,6 +7,7 @@ namespace ProjetoPousada.Dominio.Interfaces.Cadastro
         void Incluir(ClienteEntity obj);
         void Atualizar(ClienteEntity obj);
         ClienteEntity ConsultarPorId(int id);
+        ClienteEntity ConsultarPorCPF(string cpf);
         void Excluir(int id);
         IEnumerable<ClienteEntity> Listar();
         IEnumerable<ClienteEntity> ListarUltimos20Ativos();

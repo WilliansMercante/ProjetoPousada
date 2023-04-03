@@ -36,7 +36,7 @@
             @Html.TextBoxFor(p => p.Cliente.DtNascimento,new {@class = "form-control",required = "required",maxlength = "400",placeholder = "Data de Nascimento", type="date"})
         </div>
         <div class="col-md-2">
-            <button class="btn btn-success" id="btnPesquisar">
+            <button class="btn btn-success" id="btnPesquisar" style="margin-top: 2px;">
                 <i class="align-middle me-2" data-feather="search"></i>
                 Pesquisar
             </button>
@@ -90,8 +90,7 @@
 
 @section JS
     {
-    <script src="~/assets/moment/moment.min.js"></script>
-    <script src="~/assets/js/custom/utils/requisicao.js"></script>
+    <script src="~/assets/moment/moment.min.js"></script>    
     <script src="~/assets/js/custom/utils/nulooubranco.js"></script>
     <script src="~/assets/js/custom/utils/validacaocpf.js"></script>
     <script src="~/assets/js/custom/cadastro/cliente/index.js"></script>

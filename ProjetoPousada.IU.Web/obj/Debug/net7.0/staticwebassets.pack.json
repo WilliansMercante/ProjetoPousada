@@ -177,6 +177,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\cadastro\\cadastro.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\cadastro\\cadastro.js"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\cliente\\index.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\cliente\\index.js"
     },
@@ -195,6 +199,10 @@
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\requisicao.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\requisicao.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\jqueryMask\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jqueryMask\\jquery.mask.min.js"
     },
     {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\moment\\moment.min.js",

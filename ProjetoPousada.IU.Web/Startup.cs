@@ -161,8 +161,16 @@ namespace ProjetoPousada.IU.Web
 				   pattern: "{controller=Autenticar}/{action=Index}/{id?}"
 			   );
 
-				endpoints.MapControllers();
-			});		
-		}
+				
+			});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "Cadastro",
+                  pattern: "{area:Cadastro}/{controller}/{action}/{id?}"
+                );
+                endpoints.MapControllers();
+            });
+        }
 	}
 }

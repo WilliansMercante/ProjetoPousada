@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using ProjetoPousada.Dominio.Entidades.Cadastro;
+using ProjetoPousada.Dominio.Entidades.Log;
 using ProjetoPousada.Dominio.Interfaces;
 using ProjetoPousada.Infra.Mappings.Cadastro;
+using ProjetoPousada.Infra.Mappings.Log;
 
 namespace ProjetoPousada.Infra.Contexts
 {
@@ -24,6 +26,13 @@ namespace ProjetoPousada.Infra.Contexts
 
         #endregion
 
+        #region Log
+        public DbSet<LogEntity> Log { get; set; }
+
+        #endregion
+
+       
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClienteMapping());
@@ -32,6 +41,8 @@ namespace ProjetoPousada.Infra.Contexts
             modelBuilder.ApplyConfiguration(new TipoEnderecoMapping());
             modelBuilder.ApplyConfiguration(new TipoTelefoneMapping());
             modelBuilder.ApplyConfiguration(new SexoMapping());
+
+            modelBuilder.ApplyConfiguration(new LogMapping());
 
             base.OnModelCreating(modelBuilder);
         }

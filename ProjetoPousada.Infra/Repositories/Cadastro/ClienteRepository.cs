@@ -38,6 +38,11 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
             return resultado;
         }
 
+        public ClienteEntity ConsultarPorCPF(string cpf)
+        {
+            var oClienteEntity = _context.Cliente.FirstOrDefault(p => p.CPF.Equals(cpf));
+            return oClienteEntity;
+        }
 
         public void Inativar(int id)
         {
