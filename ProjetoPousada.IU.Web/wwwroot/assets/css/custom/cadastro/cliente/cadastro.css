@@ -1,0 +1,20 @@
+﻿
+.readonlyCliente {
+    background-color: #e9ecef;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.readonlyEndereco {
+    background-color: #e9ecef;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.readonlyTelefone {
+    background-color: #e9ecef;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+

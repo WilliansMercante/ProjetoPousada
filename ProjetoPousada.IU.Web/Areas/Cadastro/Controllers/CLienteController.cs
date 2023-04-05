@@ -105,23 +105,46 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             return View("Cadastro", cadastroVM);
         }
 
-        [HttpPost]
-        [Route("Cadastro")]
-        public IActionResult Cadastro(CadastroViewModel cadastroVM)
-        {
+        //[HttpPost]
+        //[Route("Cadastro")]
+        //public IActionResult Cadastro(CadastroViewModel cadastroVM)
+        //{
 
+        //    try
+        //    {
+        //        cadastroVM.Cliente.CPF = RetiraCaracterHelper.RetiraCaracteres(cadastroVM.Cliente.CPF);
+        //        _clienteApp.Incluir(cadastroVM.Cliente);
+        //        ExibirMensagem("Cliente Cadastrado!", TipoMensagem.Sucesso);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ExibirMensagem(ex.Message, TipoMensagem.Erro);
+        //    }
+
+        //    return RedirectToAction("Index");
+        //}
+
+
+
+
+        [Route("Cadastro")]
+        [HttpPost]
+        public JsonResult Cadastro(ClienteViewModel clienteVM)
+        {
             try
             {
-                cadastroVM.Cliente.CPF = RetiraCaracterHelper.RetiraCaracteres(cadastroVM.Cliente.CPF);
-                _clienteApp.Incluir(cadastroVM.Cliente);
+                clienteVM.CPF = RetiraCaracterHelper.RetiraCaracteres(clienteVM.CPF);
+                ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
+                _clienteApp.Incluir(clienteVM);
+
                 ExibirMensagem("Cliente Cadastrado!", TipoMensagem.Sucesso);
+                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso!" });
+
             }
             catch (Exception ex)
             {
-                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+                return Json(new { FlSucesso = false, Mensagem = ex.Message });
             }
-
-            return RedirectToAction("Index");
         }
     }
 }

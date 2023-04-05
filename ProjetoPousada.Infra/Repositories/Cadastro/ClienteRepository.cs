@@ -56,7 +56,5 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
             var lstClienteEntity = _context.Cliente.Include(p => p.Sexo).Where(p => p.FlAtivo).OrderByDescending(p => p.DtCadastro).Take(20);
             return lstClienteEntity;
         }
-
-
     }
 }

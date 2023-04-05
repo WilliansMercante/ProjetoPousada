@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\custom\\cadastro\\cliente\\cadastro.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom\\cadastro\\cliente\\cadastro.css"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\css\\loading.css",
       "PackagePath": "staticwebassets\\assets\\css\\loading.css"
     },

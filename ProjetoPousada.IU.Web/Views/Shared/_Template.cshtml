@@ -32,13 +32,9 @@
     <link href="~/assets/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        .readonly{
-            background-color: #e9ecef;
-            pointer-events:none;
-            cursor:not-allowed;
-        }
-    </style>
+    
+    @RenderSection("CSS", required: false)
+
 </head>
 
 <body>
@@ -158,12 +154,9 @@
 
     <script src="~/assets/js/app.js"></script>
     <script src="~/assets/js/custom/utils/requisicao.js"></script>
+    <script src="~/assets/moment/moment.min.js"></script>
 
-    <script type="text/javascript">
-
-        
-
-        
+    <script type="text/javascript">        
 
         $(window).on('load', function () {
             // Animate loader off screen
