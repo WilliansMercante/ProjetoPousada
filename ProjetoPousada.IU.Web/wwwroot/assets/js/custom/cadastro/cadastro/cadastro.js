@@ -1,10 +1,25 @@
 ﻿$(document).ready(function ($) {
 
     $("#Cliente_CPF").mask("999.999.999-99");
+    $("#Endereco_Cep").mask("99999-999");
+
+    $("#TipoTelefone_Id").on('change', function () {
+
+        switch ($("#TipoTelefone_Id").val()) {
+
+            case "1":
+                $("#Telefone_Numero").mask("9 9999-9999");
+                break;
+
+            default:
+                $("#Telefone_Numero").mask("9999-9999");
+                break;
+        }
+    })
 
     $('#Cliente_CPF').keypress(function (e) {
         if ((e.keyCode == 10) || (e.keyCode == 13)) {
-            e.preventDefault();
+            $("#btnPesquisar").click();
         }
     });
 
@@ -14,7 +29,7 @@
 
         if (cpfSemFormatacao != '') {
 
-            let cpfLimpo = formatarCPF(cpfSemFormatacao);
+            let cpfLimpo = limparCPF(cpfSemFormatacao);
 
             if (verificaCPF(cpfLimpo)) {
 
@@ -24,17 +39,41 @@
 
                         if (retorno.flSucesso) {
 
+                            console.log(retorno.oCliente)
+
                             if (retorno.oCliente != null) {
 
-                                $("#Cliente_CPF").val("");
-                                bootbox.alert("O Cliente " + retorno.oCliente.nome + " já esta Cadastrado");
+                                if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones > 0) {
+
+                                    $("#Cliente_CPF").val("");
+                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado e possui endereço e telefone");
+
+                                } else if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length == 0) {
+
+                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
+                                    preencheCliente(retorno.oCliente)
+                                    preparaCadastro();
+                                    preparaTelefone();
+
+                                } else if (retorno.oCliente.enderecos.length == 0 && retorno.oCliente.telefones.length > 0) {
+
+                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
+                                    preencheCliente(retorno.oCliente)
+                                    preparaCadastro();
+                                    preparaEndereco();
+
+                                } else {
+
+                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
+                                    preparaCadastro();
+                                    preencheCliente(retorno.oCliente)
+                                    preparaEnderecoTelefone();
+                                }
 
                             } else {
 
                                 $(".readonlyCliente").removeClass('readonlyCliente');
-                                $("#Cliente_CPF").addClass("readonlyCliente");
-                                $("#btnPesquisar").addClass("readonlyCliente");
-                                $("#divBtnPesquisar").hide();
+                                preparaCadastro();
                                 $("#divBtnCadastrar").show();
                             }
 
@@ -56,7 +95,6 @@
 
         let cpfFormatado = $("#Cliente_CPF").val();
         let dtNascimento = $("#Cliente_DtNascimento").val();
-
         let cpfLimpo = limparCPF(cpfFormatado);
         let nome = $("#Cliente_Nome").val();
         let idSexo = $("#Cliente_IdSexo").val();
@@ -70,61 +108,56 @@
 
                 if (retorno.flSucesso) {
 
-                    $('.collapse').collapse();
+                    bootbox.alert(retorno.mensagem);
+                    preparaEnderecoTelefone();
 
                 } else {
 
-                    alert(retorno.mensagem);
+                    bootbox.alert(retorno.mensagem);
 
                 }
             })
         }
     });
 
+    function preencheCliente(cliente) {
 
+        $("#Cliente_Nome").val(cliente.nome);
+        $("#Cliente_DtNascimento").val(moment(cliente.dtNascimento).format("DD/MM/YYYY"));
+        $("#Cliente_IdSexo").val(cliente.idSexo);
+        $("#Cliente_Rg").val(cliente.rg);
+    }
 
+    function preparaCadastro() {
 
+        $("#Cliente_CPF").addClass("readonlyCliente");
+        $("#btnPesquisar").addClass("readonlyCliente");
+        $("#divBtnPesquisar").hide();
+    }
 
+    function preparaEndereco() {
 
+        $(".readonlyEndereco").removeClass('readonlyEndereco');
+        $("#divBtnCadastrarEndereco").show();
+        $("#divMensagemPreenchimentoEndereco").text("Continue o preenchimento do endereço").css({ "color": "red" });
+    }
 
+    function preparaTelefone() {
 
+        $(".readonlyTelefone").removeClass('readonlyTelefone');
+        $("#divBtnCadastrarTelefone").show();
+        $("#divMensagemPreenchimentoTelefone").text("Continue o preenchimento do telefone").css({ "color": "red" });
+    }
 
+    function preparaEnderecoTelefone() {
 
+        $('.collapse').collapse();
+        preparaEndereco();
+        preparaTelefone();
 
-
-
-
-    // $("#frmCadastro").on("submit", function (event) {
-
-    //    event.preventDefault();
-    //    event.stopPropagation();
-
-    //    requisicao("/Cadastro/Cliente/Cadastro", "POST", $("#frmCadastro").find(":input").serialize())
-
-    //        .done(function (retorno) {
-
-    //            if (retorno.flSucesso) {
-
-    //                bootbox.alert(retorno.mensagem);
-
-
-    //            }
-    //            else {
-    //                bootbox.alert(retorno.mensagem);
-    //            }
-    //        })
-    //})
-
-
-
-
-
-
-
-
-
-
-
+        $("#btnCadastrar").addClass("readonlyCliente");
+        $("#divBtnCadastrar").hide();
+    }
 
     $("#Endereco_Cep").blur(function () {
 
@@ -138,20 +171,20 @@
                 $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
                     if (!("erro" in dados)) {
-                        $("#Endereco_rua").val(dados.logradouro);
+                        $("#Endereco_Rua").val(dados.logradouro);
                         $("#Endereco_Bairro").val(dados.bairro);
-                        $("#Paciente_Municipio").val(dados.localidade);
-                        $("#Paciente_UF").val(dados.uf);
+                        $("#Endereco_Municipio").val(dados.localidade);
+                        $("#Endereco_UF").val(dados.uf);
                     }
                     else {
-                        toastr.error("CEP não encontrado.");
+                        bootbox.alert("CEP não encontrado.");
                         limparDadosEndereco();
                     }
                 });
 
             } else {
 
-                toastr.error("Formato de CEP inválido.");
+                bootbox.alert("Formato de CEP inválido.");
                 limparDadosEndereco();
             }
         } else {
@@ -162,30 +195,10 @@
 
     function limparDadosEndereco() {
 
-        $("#Paciente_Logradouro").val("");
-        $("#Paciente_Bairro").val("");
-        $("#Paciente_Municipio").val("");
-        $("#Paciente_UF").val("");
-        $("#Paciente_Cep").val("");
+        $("#Endereco_rua").val("");
+        $("#Endereco_Bairro").val("");
+        $("#Endereco_Municipio").val("");
+        $("#Endereco_UF").val("");
+        $("#Endereco_Cep").val("");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

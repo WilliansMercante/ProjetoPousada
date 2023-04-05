@@ -17,13 +17,17 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         private readonly ITelefoneApp _telefoneApp;
         private readonly IEnderecoApp _enderecoApp;
         private readonly ISexoApp _sexoApp;
+        private readonly ITipoTelefoneApp _tipoTelefoneApp;
+        private readonly ITipoEnderecoApp _tipoEnderecoApp;
 
         public ClienteController
         (
             IClienteApp clienteApp,
             ITelefoneApp telefoneApp,
             IEnderecoApp enderecoApp,
-            ISexoApp sexoApp
+            ISexoApp sexoApp,
+            ITipoTelefoneApp tipoTelefoneApp,
+            ITipoEnderecoApp tipoEnderecoApp
 
         )
         {
@@ -31,6 +35,8 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             _telefoneApp = telefoneApp;
             _enderecoApp = enderecoApp;
             _sexoApp = sexoApp;
+            _tipoTelefoneApp = tipoTelefoneApp;
+            _tipoEnderecoApp = tipoEnderecoApp;
         }
 
         [HttpGet]
@@ -96,6 +102,8 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             try
             {
                 cadastroVM.Sexos = new SelectList(_sexoApp.Listar(), "Id", "Sexo").ToList();
+                cadastroVM.LstTiposEndereco = new SelectList(_tipoEnderecoApp.Listar(), "Id", "Tipo").ToList();
+                cadastroVM.LstTiposTelefone = new SelectList(_tipoTelefoneApp.Listar(), "Id", "Tipo").ToList();
             }
             catch (Exception ex)
             {
@@ -137,8 +145,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
                 ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
                 _clienteApp.Incluir(clienteVM);
 
-                ExibirMensagem("Cliente Cadastrado!", TipoMensagem.Sucesso);
-                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso!" });
+                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!" });
 
             }
             catch (Exception ex)

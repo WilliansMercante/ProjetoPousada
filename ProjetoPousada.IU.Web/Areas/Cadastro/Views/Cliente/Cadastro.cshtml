@@ -62,14 +62,12 @@
         </div>
     </div>
 
-    <div class="row">        
-        
-    </div>
-
 }
 
 <br />
 
+<div id="divMensagemPreenchimentoEndereco"></div>
+<br />
 <div id="accordion">
     <div class="card">
         <div class="card-header" id="headingOne">
@@ -86,36 +84,56 @@
                 <div class="row">
                     <div class="col-md-3">
                         <label>Tipo de endereço:<span class="text-danger">*</span></label>
-                        @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco"})
+                        @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco",required = "required"})
                     </div>
                 </div>
                 <br />
                 <div class="row">
                     <div class="col-md-2">
                         <label>CEP:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "7",placeholder = "CEP"})
+                        @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "8",placeholder = "CEP",required = "required"})
                     </div>
                     <div class="col-md-3">
                         <label>Rua:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua"})
+                        @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua",required = "required"})
                     </div>
                     <div class="col-md-1">
                         <label>Número:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número"})
+                        @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número",required = "required"})
                     </div>
                     <div class="col-md-3">
-                        <label>Complemento:<span class="text-danger">*</span></label>
+                        <label>Complemento:</label>
                         @Html.TextBoxFor(p => p.Endereco.Complemento,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Complemento"})
                     </div>
                     <div class="col-md-3">
                         <label>Bairro:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro"})
+                        @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro",required = "required"})
                     </div>
                 </div>
-
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Município:<span class="text-danger">*</span></label>
+                        @Html.TextBoxFor(p => p.Endereco.Municipio,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Município",required = "required"})
+                    </div>
+                    <div class="col-md-1">
+                        <label>UF:<span class="text-danger">*</span></label>
+                        @Html.TextBoxFor(p => p.Endereco.UF,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "UF",required = "required"})
+                    </div>
+                    <div class="col-md-1" style="display:none;" id="divBtnCadastrarEndereco">
+                        <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarEndereco" type="button">
+                            <i class="align-middle me-2" data-feather="search"></i>
+                            Cadastrar Endereço
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="divMensagemPreenchimentoTelefone"></div>
+    <br />
+
     <div class="card">
         <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
@@ -129,20 +147,25 @@
                 <div class="row">
                     <div class="col-md-3">
                         <label>Tipo de telefone:<span class="text-danger">*</span></label>
-                        @Html.DropDownListFor(p => p.TipoTelefone.Id , Model.LstTiposTelefone, " --- Selecione o tipo de telefone --- ", new { @class = "form-control readonlyEndereco"})
+                        @Html.DropDownListFor(p => p.TipoTelefone.Id , Model.LstTiposTelefone, " --- Selecione o tipo de telefone --- ", new { @class = "form-control readonlyTelefone",required = "required"})
                     </div>
                 </div>
                 <br />
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-1">
                         <label>DDD:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Telefone.DDD,new {@class = "form-control readonlyEndereco",maxlength = "7",placeholder = "Cep"})
+                        @Html.TextBoxFor(p => p.Telefone.DDD,new {@class = "form-control readonlyTelefone",maxlength = "2",placeholder = "DDD",required = "required"})
                     </div>
                     <div class="col-md-3">
                         <label>Número:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Telefone.Numero,new {@class = "form-control readonlyEndereco",placeholder = "Número"})
+                        @Html.TextBoxFor(p => p.Telefone.Numero,new {@class = "form-control readonlyTelefone",placeholder = "Número",required = "required"})
                     </div>
-
+                    <div class="col-md-1" style="display:none;" id="divBtnCadastrarTelefone">
+                        <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarTelefone" type="button">
+                            <i class="align-middle me-2" data-feather="search"></i>
+                            Cadastrar Telefone
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,13 +173,10 @@
 </div>
 
 
-
-
-
 @section JS
     {
     <script src="~/assets/js/custom/utils/formatacaocpf.js"></script>
     <script src="~/assets/js/custom/utils/validacaocpf.js"></script>
-    <script src="~/assets/js/jquerymask/jquery.mask.min.js"></script>
+
     <script src="~/assets/js/custom/cadastro/cadastro/cadastro.js"></script>
     }

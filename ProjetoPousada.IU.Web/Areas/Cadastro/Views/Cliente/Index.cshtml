@@ -64,7 +64,7 @@
                 <tr>
                     <td>@cliente.Nome</td>
                     <td>@cliente.DtNascimento.ToShortDateString()</td>
-                    <td>@cliente.CPF</td>
+                    <td>@cliente.CPF.Substring(0,3).@cliente.CPF.Substring(3,3).@cliente.CPF.Substring(6,3)-@cliente.CPF.Substring(9,2)</td>
                     <td>@cliente.Rg</td>
                     <td>@cliente.Sexo.Sexo</td>
                     @if (cliente.FlAtivo)

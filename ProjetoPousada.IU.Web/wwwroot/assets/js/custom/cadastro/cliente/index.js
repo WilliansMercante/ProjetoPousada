@@ -1,7 +1,5 @@
 ﻿$(document).ready(function () {
 
-    
-
     $("#btnPesquisar").off('click').on('click', function () {
 
         let nome = $("#Cliente_Nome").val();
@@ -29,7 +27,7 @@
                         preencheTabelaAtendimento(true, retorno.lstClientes);
 
                     } else {
-                        alert(retorno.mensagem);
+                        bootbox.alert(retorno.mensagem);
                     }
                 })
         }
@@ -51,8 +49,9 @@
             // adiciona as células da linha com os dados do cliente
             novaLinha.append($('<td>').text(cliente.nome));
             novaLinha.append($('<td>').text(moment(cliente.dtNascimento).format("DD/MM/YYYY")));
-            novaLinha.append($('<td>').text(cliente.cpf));
-            novaLinha.append($('<td>').text(cliente.rg));
+            novaLinha.append($('<td>').text(cliente.cpf.substring(0, 3) + "." + cliente.cpf.substring(3, 6) + "." + cliente.cpf.substring(6, 9) + "-" + cliente.cpf.substring(9, 11)));
+            novaLinha.append($('<td>').text(cliente.rg ? cliente.rg : ''));
+            novaLinha.append($('<td>').text(cliente.sexo.sexo));
             novaLinha.append($('<td>').text(cliente.flAtivo ? 'Sim' : 'Não'));
             novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY")));
             novaLinha.append($('<td>').html('<button style="width:40px; height:40px" class="btn btn-warning bd-placeholder-img rounded-circle"><i style="margin-top: -3px" class="align-middle me-2" data-feather="edit"></i></button>'));

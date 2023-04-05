@@ -38,6 +38,8 @@ namespace ProjetoPousada.IoC
             services.AddScoped<IEnderecoApp, EnderecoApp>();
             services.AddScoped<ITelefoneApp, TelefoneApp>();
             services.AddScoped<ISexoApp, SexoApp>();
+            services.AddScoped<ITipoTelefoneApp, TipoTelefoneApp>();
+            services.AddScoped<ITipoEnderecoApp, TipoEnderecoApp>();
         }
 
         private static void AddService(IServiceCollection services)
@@ -67,6 +69,8 @@ namespace ProjetoPousada.IoC
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddScoped<ITelefoneRepository, TelefoneRepository>();
             services.AddScoped<ISexoRepository, SexoRepository>();
+            services.AddScoped<ITipoTelefoneRepository, TipoTelefoneRepository>();
+            services.AddScoped<ITipoEnderecoRepository, TipoEnderecoRepository>();
 
             #endregion
 
