@@ -193,6 +193,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\ValidacaoCPF.js"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\formataDataHtmlDate.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\formataDataHtmlDate.js"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\formatacaoCPF.js"
     },

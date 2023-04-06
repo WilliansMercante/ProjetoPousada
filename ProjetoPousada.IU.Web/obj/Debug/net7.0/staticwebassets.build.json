@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "USPfW274eqX160WjQrvhndwPFnxICYDGlhPMQmWITaA=",
+  "Hash": "fgUsENdA7CwQaLiY/Bll1aN5/p7q9p1teG3ALrBRKWI=",
   "Source": "ProjetoPousada.IU.Web",
   "BasePath": "_content/ProjetoPousada.IU.Web",
   "Mode": "Default",
@@ -831,6 +831,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js"
+    },
+    {
+      "Identity": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\formataDataHtmlDate.js",
+      "SourceId": "ProjetoPousada.IU.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\",
+      "BasePath": "_content/ProjetoPousada.IU.Web",
+      "RelativePath": "assets/js/custom/utils/formataDataHtmlDate.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\utils\\formataDataHtmlDate.js"
     },
     {
       "Identity": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\nuloOuBranco.js",

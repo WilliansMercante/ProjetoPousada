@@ -123,7 +123,7 @@
     function preencheCliente(cliente) {
 
         $("#Cliente_Nome").val(cliente.nome);
-        $("#Cliente_DtNascimento").val(moment(cliente.dtNascimento).format("DD/MM/YYYY"));
+        $('#Cliente_DtNascimento').val(moment(cliente.dtNascimento).format("YYYY-MM-DD"));
         $("#Cliente_IdSexo").val(cliente.idSexo);
         $("#Cliente_Rg").val(cliente.rg);
     }
@@ -201,4 +201,58 @@
         $("#Endereco_UF").val("");
         $("#Endereco_Cep").val("");
     }
+
+    $("#btnCadastrarEndereco").off().on('click', function () {
+        if ($("#frmEndereco")[0].checkValidity()) {
+
+
+
+            cadastraEndereco();
+
+
+
+
+
+
+        } else {
+            $("#frmEndereco")[0].reportValidity();
+        }
+    })
+
+
+
+
+
+
+    function cadastraEndereco() {
+
+
+        let idTipoEndereco = $("#TipoEndereco_Id").val();
+        let cep = $("#Endereco_Cep").val();
+        let endereco = $("#Endereco_Rua").val();
+        let numero = $("#Endereco_Numero").val();
+        let complemento = $("#Endereco_Complemento").val();
+        let bairro = $("#Endereco_Bairro").val();
+        let municipio = $("#Endereco_Municipio").val();
+        let uf = $("#Endereco_UF").val();
+
+        let dados = { idTipoEndereco: idTipoEndereco, cep: cep, endereco: endereco, numero: numero, complemento: complemento, bairro: bairro, municipio: municipio, uf: uf }
+
+
+        requisicao("/Cadastro/Cliente/Cadastro", "POST", dados).done(function (retorno) {
+
+            if (retorno.flSucesso) {
+
+                bootbox.alert(retorno.mensagem);
+                preparaEnderecoTelefone();
+
+            } else {
+
+                bootbox.alert(retorno.mensagem);
+
+            }
+        })
+
+    }
+
 });

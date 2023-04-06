@@ -18,7 +18,7 @@
 
         } else {
 
-            requisicao("/Cadastro/Cliente/Pesquisar/", "POST", dados)
+            requisicao("/Cadastro/Cliente/Pesquisar/", "GET", dados)
 
                 .done(function (retorno) {
 

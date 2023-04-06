@@ -57,7 +57,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             return View(indexVM);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("Pesquisar")]
         public JsonResult Pesquisar(string nome, string cpf, DateTime? dtNascimento)
         {

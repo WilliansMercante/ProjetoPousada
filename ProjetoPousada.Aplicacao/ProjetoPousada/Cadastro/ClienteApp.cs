@@ -70,7 +70,7 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
         {
             var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
-            return lstClienteViewModel; ;
+            return lstClienteViewModel; 
         }
 
         public ClienteViewModel ConsultarPorCPF(string cpf)

@@ -80,53 +80,55 @@
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
+                <form id="frmEndereco">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Tipo de endereço:<span class="text-danger">*</span></label>
+                            @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco",required = "required"})
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>CEP:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "8",placeholder = "CEP",required = "required"})
+                        </div>
+                        <div class="col-md-3">
+                            <label>Rua:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua",required = "required"})
+                        </div>
+                        <div class="col-md-1">
+                            <label>Número:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número",required = "required"})
+                        </div>
+                        <div class="col-md-3">
+                            <label>Complemento:</label>
+                            @Html.TextBoxFor(p => p.Endereco.Complemento,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Complemento"})
+                        </div>
+                        <div class="col-md-3">
+                            <label>Bairro:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro",required = "required"})
+                        </div>
+                    </div>
+                    <br />
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Tipo de endereço:<span class="text-danger">*</span></label>
-                        @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco",required = "required"})
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Município:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.Municipio,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Município",required = "required"})
+                        </div>
+                        <div class="col-md-1">
+                            <label>UF:<span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(p => p.Endereco.UF,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "UF",required = "required"})
+                        </div>
+                        <div class="col-md-1" style="display:none;" id="divBtnCadastrarEndereco">
+                            <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarEndereco" type="button">
+                                <i class="align-middle me-2" data-feather="search"></i>
+                                Cadastrar Endereço
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-2">
-                        <label>CEP:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "8",placeholder = "CEP",required = "required"})
-                    </div>
-                    <div class="col-md-3">
-                        <label>Rua:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua",required = "required"})
-                    </div>
-                    <div class="col-md-1">
-                        <label>Número:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número",required = "required"})
-                    </div>
-                    <div class="col-md-3">
-                        <label>Complemento:</label>
-                        @Html.TextBoxFor(p => p.Endereco.Complemento,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Complemento"})
-                    </div>
-                    <div class="col-md-3">
-                        <label>Bairro:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro",required = "required"})
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Município:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.Municipio,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Município",required = "required"})
-                    </div>
-                    <div class="col-md-1">
-                        <label>UF:<span class="text-danger">*</span></label>
-                        @Html.TextBoxFor(p => p.Endereco.UF,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "UF",required = "required"})
-                    </div>
-                    <div class="col-md-1" style="display:none;" id="divBtnCadastrarEndereco">
-                        <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarEndereco" type="button">
-                            <i class="align-middle me-2" data-feather="search"></i>
-                            Cadastrar Endereço
-                        </button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
