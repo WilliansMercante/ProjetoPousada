@@ -166,10 +166,10 @@ namespace ProjetoPousada.IU.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                  name: "Cadastro",
-                  pattern: "{area:Cadastro}/{controller}/{action}/{id?}"
+                  name: "areas",
+                  pattern: "{area:exists}/{controller}/{action}/{id?}"
                 );
-                endpoints.MapControllers();
+                //endpoints.MapControllers();
             });
         }
 	}

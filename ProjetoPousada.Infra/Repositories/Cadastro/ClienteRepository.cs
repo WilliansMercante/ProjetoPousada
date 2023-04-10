@@ -40,7 +40,9 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
 
         public ClienteEntity ConsultarPorCPF(string cpf)
         {
-            var oClienteEntity = _context.Cliente.FirstOrDefault(p => p.CPF.Equals(cpf));
+            var oClienteEntity = _context.Cliente.Include(p => p.Enderecos)
+                                                 .Include(p => p.Telefones)
+                                                 .FirstOrDefault(p => p.CPF.Equals(cpf));
             return oClienteEntity;
         }
 

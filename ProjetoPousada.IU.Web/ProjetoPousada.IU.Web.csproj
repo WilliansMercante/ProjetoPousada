@@ -24,8 +24,4 @@
     <ProjectReference Include="..\ProjetoPousada.ViewModel\ProjetoPousada.ViewModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Cadastro\Data\" />
-  </ItemGroup>
-
 </Project>

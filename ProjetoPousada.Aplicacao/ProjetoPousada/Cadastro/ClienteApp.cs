@@ -45,13 +45,14 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
             _unitOfWork.Commit();
         }
 
-        public void Incluir(ClienteViewModel enderecoVM)
+        public int Incluir(ClienteViewModel clienteVM)
         {
-            var oClienteEntity = _mapper.Map<ClienteEntity>(enderecoVM);
+            var oClienteEntity = _mapper.Map<ClienteEntity>(clienteVM);
             oClienteEntity.DtCadastro = DateTime.Now;
             oClienteEntity.FlAtivo = true;
             _ClienteRepository.Incluir(oClienteEntity);
             _unitOfWork.Commit();
+            return oClienteEntity.Id;
         }
 
         public IEnumerable<ClienteViewModel> Listar()

@@ -9,8 +9,8 @@ using ProjetoPousada.ViewModel.Cadastro;
 
 namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 {
-    [Area("Cadastro")]
-    [Route("Cadastro/[controller]")]
+    [Area("Cliente")]
+    [Route("Cliente/[controller]")]
     public class ClienteController : BaseController
     {
         private readonly IClienteApp _clienteApp;
@@ -40,7 +40,6 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         }
 
         [HttpGet]
-        [Route("Index")]
         public IActionResult Index()
         {
             IndexViewModel indexVM = new IndexViewModel();
@@ -89,8 +88,6 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             {
                 return Json(new { flSucesso = false, mensagem = ex.Message });
             }
-
-
         }
 
         [HttpGet]
@@ -113,28 +110,6 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             return View("Cadastro", cadastroVM);
         }
 
-        //[HttpPost]
-        //[Route("Cadastro")]
-        //public IActionResult Cadastro(CadastroViewModel cadastroVM)
-        //{
-
-        //    try
-        //    {
-        //        cadastroVM.Cliente.CPF = RetiraCaracterHelper.RetiraCaracteres(cadastroVM.Cliente.CPF);
-        //        _clienteApp.Incluir(cadastroVM.Cliente);
-        //        ExibirMensagem("Cliente Cadastrado!", TipoMensagem.Sucesso);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ExibirMensagem(ex.Message, TipoMensagem.Erro);
-        //    }
-
-        //    return RedirectToAction("Index");
-        //}
-
-
-
-
         [Route("Cadastro")]
         [HttpPost]
         public JsonResult Cadastro(ClienteViewModel clienteVM)
@@ -143,9 +118,9 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             {
                 clienteVM.CPF = RetiraCaracterHelper.RetiraCaracteres(clienteVM.CPF);
                 ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
-                _clienteApp.Incluir(clienteVM);
+                int idCliente =  _clienteApp.Incluir(clienteVM);
 
-                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!" });
+                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = idCliente });
 
             }
             catch (Exception ex)

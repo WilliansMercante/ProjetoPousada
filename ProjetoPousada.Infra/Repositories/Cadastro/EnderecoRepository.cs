@@ -1,4 +1,6 @@
-﻿using ProjetoPousada.Dominio.Entidades.Cadastro;
+﻿using Microsoft.EntityFrameworkCore;
+
+using ProjetoPousada.Dominio.Entidades.Cadastro;
 using ProjetoPousada.Dominio.Interfaces.Cadastro;
 using ProjetoPousada.Infra.Contexts;
 
@@ -19,7 +21,8 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
 
         public IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente)
         {
-            var lstEnderecoEntity = _context.Endereco.Where(p => p.IdCliente.Equals(IdCliente));
+            var lstEnderecoEntity = _context.Endereco.Include(p => p.TipoEndereco)
+                                                      .Where(p => p.IdCliente.Equals(IdCliente));
             return lstEnderecoEntity;
         }
     }

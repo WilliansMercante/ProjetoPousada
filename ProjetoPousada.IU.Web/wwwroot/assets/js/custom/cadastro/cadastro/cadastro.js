@@ -33,7 +33,7 @@
 
             if (verificaCPF(cpfLimpo)) {
 
-                requisicao("/Cadastro/Cliente/PesquisarCPF/" + cpfLimpo, "GET")
+                requisicao("/Cliente/Cliente/PesquisarCPF/" + cpfLimpo, "GET")
 
                     .done(function (retorno) {
 
@@ -51,13 +51,17 @@
                                 } else if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length == 0) {
 
                                     bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
+                                    preencheIdCliente(retorno.oCliente.id)
                                     preencheCliente(retorno.oCliente)
                                     preparaCadastro();
-                                    preparaTelefone();
+                                    preparaTelefone();                                    
+                                    atualizarTabelaEndereco(retorno.oCliente.id);
+                                    $('#collapseTwo').collapse();
 
                                 } else if (retorno.oCliente.enderecos.length == 0 && retorno.oCliente.telefones.length > 0) {
 
                                     bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
+                                    preencheIdCliente(retorno.oCliente.id)
                                     preencheCliente(retorno.oCliente)
                                     preparaCadastro();
                                     preparaEndereco();
@@ -65,6 +69,7 @@
                                 } else {
 
                                     bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
+                                    preencheIdCliente(retorno.oCliente.id)
                                     preparaCadastro();
                                     preencheCliente(retorno.oCliente)
                                     preparaEnderecoTelefone();
@@ -104,10 +109,11 @@
 
         if (cpfLimpo != '' && nome != '' && dtNascimento != '' && idSexo != '') {
 
-            requisicao("/Cadastro/Cliente/Cadastro", "POST", dados).done(function (retorno) {
+            requisicao("/Cliente/Cliente/Cadastro", "POST", dados).done(function (retorno) {
 
                 if (retorno.flSucesso) {
 
+                    preencheIdCliente(retorno.idCliente);
                     bootbox.alert(retorno.mensagem);
                     preparaEnderecoTelefone();
 
@@ -171,10 +177,10 @@
                 $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
                     if (!("erro" in dados)) {
-                        $("#Endereco_Rua").val(dados.logradouro);
-                        $("#Endereco_Bairro").val(dados.bairro);
-                        $("#Endereco_Municipio").val(dados.localidade);
-                        $("#Endereco_UF").val(dados.uf);
+                        $("#Endereco_Rua").val(dados.logradouro).attr('readonly', true);
+                        $("#Endereco_Bairro").val(dados.bairro).attr('readonly', true);
+                        $("#Endereco_Municipio").val(dados.localidade).attr('readonly', true);
+                        $("#Endereco_UF").val(dados.uf).attr('readonly', true);
                     }
                     else {
                         bootbox.alert("CEP não encontrado.");
@@ -195,64 +201,106 @@
 
     function limparDadosEndereco() {
 
-        $("#Endereco_rua").val("");
+        $("#Endereco_Rua").val("");
         $("#Endereco_Bairro").val("");
         $("#Endereco_Municipio").val("");
         $("#Endereco_UF").val("");
         $("#Endereco_Cep").val("");
+        $("#Endereco_Numero").val("");
+        $("#Endereco_Complemento").val("");
     }
 
     $("#btnCadastrarEndereco").off().on('click', function () {
+
         if ($("#frmEndereco")[0].checkValidity()) {
-
-
 
             cadastraEndereco();
 
-
-
-
-
-
         } else {
+
             $("#frmEndereco")[0].reportValidity();
+
         }
     })
 
+    function preencheIdCliente(idCliente) {
 
+        $("#Cliente_Id").val(idCliente);
 
-
-
+    }
 
     function cadastraEndereco() {
 
-
+        let idCliente = $("#Cliente_Id").val();
         let idTipoEndereco = $("#TipoEndereco_Id").val();
         let cep = $("#Endereco_Cep").val();
-        let endereco = $("#Endereco_Rua").val();
+        let rua = $("#Endereco_Rua").val();
         let numero = $("#Endereco_Numero").val();
         let complemento = $("#Endereco_Complemento").val();
         let bairro = $("#Endereco_Bairro").val();
         let municipio = $("#Endereco_Municipio").val();
         let uf = $("#Endereco_UF").val();
 
-        let dados = { idTipoEndereco: idTipoEndereco, cep: cep, endereco: endereco, numero: numero, complemento: complemento, bairro: bairro, municipio: municipio, uf: uf }
+        let dados = { idCliente: idCliente, idTipoEndereco: idTipoEndereco, cep: cep, rua: rua, numero: numero, complemento: complemento, bairro: bairro, municipio: municipio, uf: uf }
 
-
-        requisicao("/Cadastro/Cliente/Cadastro", "POST", dados).done(function (retorno) {
+        requisicao("/Cliente/Endereco/Cadastro", "POST", dados).done(function (retorno) {
 
             if (retorno.flSucesso) {
-
                 bootbox.alert(retorno.mensagem);
-                preparaEnderecoTelefone();
-
+                limparDadosEndereco();
+                $("#TipoEndereco_Id").val("");
+                atualizarTabelaEndereco(idCliente);
             } else {
 
                 bootbox.alert(retorno.mensagem);
 
             }
         })
-
     }
 
+    async function atualizarTabelaEndereco(idCliente) {
+
+        let retorno = await obterEnderecos(idCliente);
+        if (retorno.flSucesso) {
+            $("#divTbEndereco").show();
+            preencheTbEndereco(true, retorno.lstEndereco);
+        }
+        else {
+            bootbox.alert(retorno.mensagem);
+        }
+    }
+
+    async function obterEnderecos(idCliente) {
+        return await requisicao("/Cliente/Endereco/ListarPorCliente/" + idCliente, "GET");
+    }
+
+    function preencheTbEndereco(destroy, lstEndereco) {
+
+        if (destroy) {
+            $("#tbEndereco tbody tr").remove();
+        }
+
+        console.log(lstEndereco);
+
+        var tabela = $('#tbEndereco tbody');
+
+        // itera sobre a lista de clientes e adiciona cada um à tabela
+        $.each(lstEndereco, function (i, endereco) {
+            // cria uma nova linha para o cliente
+            var novaLinha = $('<tr>');
+
+            // adiciona as células da linha com os dados do cliente
+            novaLinha.append($('<td>').text(endereco.tipoEndereco.tipo));
+            novaLinha.append($('<td>').text(endereco.rua));
+            novaLinha.append($('<td>').text(endereco.numero));
+            novaLinha.append($('<td>').text(endereco.flAtivo ? 'Sim' : 'Não'));
+            novaLinha.append($('<td>').text(endereco.bairro));
+            novaLinha.append($('<td>').text(endereco.municipio));
+            novaLinha.append($('<td>').text(endereco.uf));
+            novaLinha.append($('<td>').text(moment(endereco.dtCadastro).format("DD/MM/YYYY")));
+
+            // adiciona a linha à tabela
+            tabela.append(novaLinha);
+        });
+    }
 });

@@ -4,7 +4,7 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces
 {
     public interface IClienteApp
     {
-        void Incluir(ClienteViewModel obj);
+        int Incluir(ClienteViewModel obj);
         void Atualizar(ClienteViewModel obj);
         ClienteViewModel ConsultarPorId(int id);
         ClienteViewModel ConsultarPorCPF(string cpf);

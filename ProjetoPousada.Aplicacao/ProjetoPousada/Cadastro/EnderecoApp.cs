@@ -47,8 +47,11 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
 
         public void Incluir(EnderecoViewModel oEnderecoViewModel)
         {
+            oEnderecoViewModel.FlAtivo = true;
             var oEnderecoEntity = _mapper.Map<EnderecoEntity>(oEnderecoViewModel);
+            oEnderecoEntity.DtCadastro = DateTime.Now;
             _enderecoRepository.Incluir(oEnderecoEntity);
+
             _unitOfWork.Commit();
         }
 
