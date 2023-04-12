@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fgUsENdA7CwQaLiY/Bll1aN5/p7q9p1teG3ALrBRKWI=",
+  "Hash": "HXQHKjLuGTpRGbqwnB2HE/gswINbSrgiW1RfwIW2k7E=",
   "Source": "ProjetoPousada.IU.Web",
   "BasePath": "_content/ProjetoPousada.IU.Web",
   "Mode": "Default",
@@ -814,6 +814,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\cadastro\\cliente\\index.js"
+    },
+    {
+      "Identity": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoEndereco.js",
+      "SourceId": "ProjetoPousada.IU.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\",
+      "BasePath": "_content/ProjetoPousada.IU.Web",
+      "RelativePath": "assets/js/custom/cadastro/enums/enumTipoEndereco.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoEndereco.js"
+    },
+    {
+      "Identity": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoTelefone.js",
+      "SourceId": "ProjetoPousada.IU.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\",
+      "BasePath": "_content/ProjetoPousada.IU.Web",
+      "RelativePath": "assets/js/custom/cadastro/enums/enumTipoTelefone.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoTelefone.js"
     },
     {
       "Identity": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js",

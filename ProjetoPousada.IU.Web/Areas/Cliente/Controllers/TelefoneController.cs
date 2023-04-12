@@ -1,17 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 using ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces;
 using ProjetoPousada.Dominio.Helpers;
-using ProjetoPousada.IU.Web.Areas.Cadastro.ViewModels.Cliente;
 using ProjetoPousada.IU.Web.Controllers;
 using ProjetoPousada.ViewModel.Cadastro;
 
-namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
+namespace ProjetoPousada.IU.Web.Areas.Cliente.Controllers
 {
     [Area("Cliente")]
     [Route("Cliente/[controller]")]
-    public class EnderecoController : BaseController
+    public class TelefoneController : BaseController
     {
 
         private readonly IClienteApp _clienteApp;
@@ -21,7 +19,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         private readonly ITipoTelefoneApp _tipoTelefoneApp;
         private readonly ITipoEnderecoApp _tipoEnderecoApp;
 
-        public EnderecoController
+        public TelefoneController
         (
             IClienteApp clienteApp,
             ITelefoneApp telefoneApp,
@@ -44,16 +42,16 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
         [Route("Cadastro")]
         [HttpPost]
-        public JsonResult Cadastro(EnderecoViewModel enderecoVM)
+        public JsonResult Cadastro(TelefoneViewModel telefoneVM)
         {
             try
             {
 
-                ExcecaoDominioHelper.Validar(enderecoVM.Rua == null || enderecoVM.Bairro == null || enderecoVM.Cep == null || enderecoVM.UF == null, "Endereco Inválido!");
-                enderecoVM.Cep = RetiraCaracterHelper.RetiraCaracteres(enderecoVM.Cep);
-                _enderecoApp.Incluir(enderecoVM);
+                ExcecaoDominioHelper.Validar(telefoneVM.Numero == null || telefoneVM.DDD == null || telefoneVM.IdTipoTelefone == 0, "Telefone Inválido!");
+                telefoneVM.Numero = RetiraCaracterHelper.RetiraCaracteres(telefoneVM.Numero);
+                _telefoneApp.Incluir(telefoneVM);
 
-                return Json(new { FlSucesso = true, Mensagem = "Endereço inserido com sucesso" });
+                return Json(new { FlSucesso = true, Mensagem = "Telefone inserido com sucesso" });
 
             }
             catch (Exception ex)
@@ -63,7 +61,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         }
 
 
-        
+
         [HttpGet]
         [Route("ListarPorCliente/{idCliente}")]
         public JsonResult ListarPorCliente(int idCLiente)
@@ -72,7 +70,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             {
 
                 ExcecaoDominioHelper.Validar(idCLiente == 0, "Sem parâmetro");
-                var lstEnderecoVM = _enderecoApp.ListarPorCliente(idCLiente);
+                var lstEnderecoVM = _telefoneApp.ListarPorCliente(idCLiente);
 
                 return Json(new { FlSucesso = true, LstEndereco = lstEnderecoVM });
 
@@ -83,4 +81,5 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
             }
         }
     }
+
 }

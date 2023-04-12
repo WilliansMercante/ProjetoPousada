@@ -11,6 +11,7 @@ namespace ProjetoPousada.Dominio.Interfaces.Cadastro
         void Excluir(int id);
         IEnumerable<ClienteEntity> Listar();
         IEnumerable<ClienteEntity> ListarUltimos20Ativos();
+        IEnumerable<ClienteEntity> ListarUltimos20();
         void Inativar(int id);
         IEnumerable<ClienteEntity> Consultar(string nome, string cpf, DateTime? dtNascimento);
     }

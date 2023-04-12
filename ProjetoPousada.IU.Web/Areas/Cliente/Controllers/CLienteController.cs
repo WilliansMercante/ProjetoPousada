@@ -46,7 +46,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
 
             try
             {
-                indexVM.Clientes = _clienteApp.ListarUltimos20Ativos();
+                indexVM.Clientes = _clienteApp.ListarUltimos20();
             }
             catch (Exception ex)
             {
@@ -114,13 +114,21 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         [HttpPost]
         public JsonResult Cadastro(ClienteViewModel clienteVM)
         {
+
             try
             {
-                clienteVM.CPF = RetiraCaracterHelper.RetiraCaracteres(clienteVM.CPF);
-                ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
-                int idCliente =  _clienteApp.Incluir(clienteVM);
 
-                return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = idCliente });
+                if (clienteVM.Id > 0)
+                {
+                    _clienteApp.Atualizar(clienteVM);
+                    return Json(new { FlSucesso = true, Mensagem = "Dados alterados com sucesso!", IdCliente = clienteVM.Id });
+                }
+
+                else
+                {
+                    clienteVM.Id = _clienteApp.Incluir(clienteVM);
+                    return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = clienteVM.Id });
+                }
 
             }
             catch (Exception ex)
@@ -128,5 +136,27 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
                 return Json(new { FlSucesso = false, Mensagem = ex.Message });
             }
         }
+
+        [Route("Editar/{id}")]
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            CadastroViewModel cadastroVM = new CadastroViewModel();
+
+            try
+            {
+                cadastroVM.Cliente = _clienteApp.ConsultarPorId(id);
+                cadastroVM.Sexos = new SelectList(_sexoApp.Listar(), "Id", "Sexo").ToList();
+                cadastroVM.LstTiposEndereco = new SelectList(_tipoEnderecoApp.Listar(), "Id", "Tipo").ToList();
+                cadastroVM.LstTiposTelefone = new SelectList(_tipoTelefoneApp.Listar(), "Id", "Tipo").ToList();
+            }
+            catch (Exception ex)
+            {
+                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+            }
+
+            return View("Cadastro", cadastroVM);
+        }
+
     }
 }

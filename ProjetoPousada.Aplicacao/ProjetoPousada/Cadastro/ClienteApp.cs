@@ -3,6 +3,7 @@
 using ProjetoPousada.Aplicacao.Mapper;
 using ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro.Interfaces;
 using ProjetoPousada.Dominio.Entidades.Cadastro;
+using ProjetoPousada.Dominio.Helpers;
 using ProjetoPousada.Dominio.Interfaces;
 using ProjetoPousada.Dominio.Interfaces.Cadastro;
 using ProjetoPousada.Infra.Contexts;
@@ -47,6 +48,9 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
 
         public int Incluir(ClienteViewModel clienteVM)
         {
+            clienteVM.CPF = RetiraCaracterHelper.RetiraCaracteres(clienteVM.CPF);
+            ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
+
             var oClienteEntity = _mapper.Map<ClienteEntity>(clienteVM);
             oClienteEntity.DtCadastro = DateTime.Now;
             oClienteEntity.FlAtivo = true;
@@ -67,6 +71,14 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
+
+        public IEnumerable<ClienteViewModel> ListarUltimos20()
+        {
+            var lstClienteEntity = _ClienteRepository.ListarUltimos20();
+            var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
+            return lstClienteViewModel;
+        }
+
         public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento)
         {
             var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);

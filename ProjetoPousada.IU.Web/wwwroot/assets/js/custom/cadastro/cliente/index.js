@@ -8,28 +8,26 @@
 
         let dados = { nome: nome, cpf: cpf, dtNascimento: dtNascimento }
 
-        if (nome == '' && cpf == '' && dtNascimento == '') {
+        requisicao("/Cliente/Cliente/Pesquisar/", "GET", dados)
 
-            bootbox.alert("Preencha pelo menos uma opção para pesquisar!");
+            .done(function (retorno) {
 
-        } else if (cpf != '' && !verificaCPF(cpf)) {
+                if (retorno.flSucesso) {
 
-            bootbox.alert("CPF Inválido!");
+                    preencheTabelaAtendimento(true, retorno.lstClientes);
 
-        } else {
+                } else {
+                    bootbox.alert(retorno.mensagem);
+                }
+            })
 
-            requisicao("/Cliente/Cliente/Pesquisar/", "GET", dados)
+    });
 
-                .done(function (retorno) {
+    $("#btnPesquisar").click();
 
-                    if (retorno.flSucesso) {
-
-                        preencheTabelaAtendimento(true, retorno.lstClientes);
-
-                    } else {
-                        bootbox.alert(retorno.mensagem);
-                    }
-                })
+    $('#Cliente_Nome , #Cliente_CPF , #Cliente_DtNascimento').keypress(function (e) {
+        if ((e.keyCode == 10) || (e.keyCode == 13)) {
+            $("#btnPesquisar").click();
         }
     });
 
@@ -52,9 +50,9 @@
             novaLinha.append($('<td>').text(cliente.cpf.substring(0, 3) + "." + cliente.cpf.substring(3, 6) + "." + cliente.cpf.substring(6, 9) + "-" + cliente.cpf.substring(9, 11)));
             novaLinha.append($('<td>').text(cliente.rg ? cliente.rg : ''));
             novaLinha.append($('<td>').text(cliente.sexo.sexo));
-            novaLinha.append($('<td>').text(cliente.flAtivo ? 'Sim' : 'Não'));
-            novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY")));
-            novaLinha.append($('<td>').html('<button style="width:40px; height:40px" class="btn btn-warning bd-placeholder-img rounded-circle"><i style="margin-top: -3px" class="align-middle me-2" data-feather="edit"></i></button>'));
+            novaLinha.append($(cliente.flAtivo ? '<td class="text-center" style="color: blue;"  title="Ativo"> <i class="text-center" data-feather="thumbs-up" ></i> <span class="text-center"></span></td>' : '<td class="text-center" style="color: red;" title="Inativo"> <i class="text-center" data-feather="thumbs-down"></i> <span class="text-center"></span></td>'));
+            novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY h:mm:ss")));
+            novaLinha.append($('<td>').html('<a style="width:40px; height:40px" class="editar btn btn-warning bd-placeholder-img rounded-circle" title="Editar" href="/Cliente/Cliente/Editar/' + cliente.id + '"><i style="margin-top: 2px; margin-left: -1px;" class="align-middle me-2" data-feather="edit"></i></a>'));
 
             // adiciona a linha à tabela
             tabela.append(novaLinha);
@@ -62,5 +60,4 @@
 
         feather.replace();
     }
-
 });

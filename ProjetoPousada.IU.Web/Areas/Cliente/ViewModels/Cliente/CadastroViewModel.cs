@@ -16,5 +16,7 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.ViewModels.Cliente
         public TipoTelefoneViewModel TipoTelefone { get; set; }
         public List<SelectListItem> LstTiposEndereco { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> LstTiposTelefone { get; set; } = new List<SelectListItem>();
+
+
     }
 }

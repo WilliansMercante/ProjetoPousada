@@ -189,6 +189,14 @@
       "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\cliente\\index.js"
     },
     {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoEndereco.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\enums\\enumTipoEndereco.js"
+    },
+    {
+      "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\cadastro\\enums\\enumTipoTelefone.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\cadastro\\enums\\enumTipoTelefone.js"
+    },
+    {
       "Id": "D:\\TestesCSharp\\ProjetoPousada\\ProjetoPousada.IU.Web\\wwwroot\\assets\\js\\custom\\utils\\ValidacaoCPF.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\ValidacaoCPF.js"
     },

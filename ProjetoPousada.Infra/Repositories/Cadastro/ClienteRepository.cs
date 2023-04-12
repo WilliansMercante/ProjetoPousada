@@ -25,7 +25,7 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
 
             if (!string.IsNullOrEmpty(cpf))
             {
-                query = query.Where(p => p.CPF == cpf);
+                query = query.Where(p => p.CPF.Contains(cpf));
             }
 
             if (dtNascimento.HasValue && dtNascimento != DateTime.MinValue)
@@ -33,7 +33,10 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
                 query = query.Where(p => p.DtNascimento == dtNascimento);
             }
 
-            var resultado = query.Include(p => p.Sexo).AsEnumerable();
+            var resultado = query
+                                 .Include(p => p.Sexo)
+                                 .OrderByDescending(p => p.FlAtivo)
+                                 .ThenByDescending(p => p.DtCadastro);
 
             return resultado;
         }
@@ -57,6 +60,21 @@ namespace ProjetoPousada.Infra.Repositories.Cadastro
         {
             var lstClienteEntity = _context.Cliente.Include(p => p.Sexo).Where(p => p.FlAtivo).OrderByDescending(p => p.DtCadastro).Take(20);
             return lstClienteEntity;
+        }
+        public IEnumerable<ClienteEntity> ListarUltimos20()
+        {
+            var lstClienteEntity = _context.Cliente
+                                           .Include(p => p.Sexo)
+                                           .OrderByDescending(p => p.FlAtivo)
+                                           .ThenByDescending(p => p.DtCadastro)
+                                           .Take(20);
+            return lstClienteEntity;
+        }
+
+        public override void Atualizar(ClienteEntity obj)
+        {
+            base.Atualizar(obj);
+            _context.Entry(obj).Property(p => p.DtCadastro).IsModified = false;
         }
     }
 }

@@ -48,6 +48,8 @@ namespace ProjetoPousada.Aplicacao.ProjetoPousada.Cadastro
         public void Incluir(TelefoneViewModel enderecoVM)
         {
             var oTelefoneEntity = _mapper.Map<TelefoneEntity>(enderecoVM);
+            oTelefoneEntity.FlAtivo = true;
+            oTelefoneEntity.DtCadastro = DateTime.Now;
             _TelefoneRepository.Incluir(oTelefoneEntity);
             _unitOfWork.Commit();
         }

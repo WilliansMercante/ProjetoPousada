@@ -12,11 +12,9 @@
             <h2>Pesquisa de Clientes</h2>
         </div>
         <div class="col-lg-2">
-            <a href="/Cliente/Cliente/Cadastro">
-                <button class="btn btn-info float-end" id="btnCadastrar">
-                    <i class="align-middle me-2" data-feather="user-plus"></i>
-                    Cadastrar
-                </button>
+            <a class="btn btn-info float-end" id="btnCadastrar" href="/Cliente/Cliente/Cadastro">
+                <i class="align-middle me-2" data-feather="user-plus"></i>
+                Cadastrar
             </a>
         </div>
     </div>
@@ -58,38 +56,14 @@
                 <th>Editar:</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (var cliente in Model.Clientes)
-            {
-                <tr>
-                    <td>@cliente.Nome</td>
-                    <td>@cliente.DtNascimento.ToShortDateString()</td>
-                    <td>@cliente.CPF.Substring(0,3).@cliente.CPF.Substring(3,3).@cliente.CPF.Substring(6,3)-@cliente.CPF.Substring(9,2)</td>
-                    <td>@cliente.Rg</td>
-                    <td>@cliente.Sexo.Sexo</td>
-                    @if (cliente.FlAtivo)
-                    {
-                        <td class="text-center"> <i class="text-center" data-feather="thumbs-up"></i> <span class="text-center"></span></td>
-                    }
-                    else
-                    {
-                        <td class="text-center"> <i class="text-center" data-feather="thumbs-down"></i> <span class="text-center"></span></td>
-                    }
-                    <td class="text-center">@cliente.DtCadastro.ToShortDateString() às @cliente.DtCadastro.ToLongTimeString()</td>
-                    <td>
-                        <button style="width:40px; height:40px" class="btn btn-warning bd-placeholder-img rounded-circle">
-                            <i style="margin-top: -3px" class="align-middle me-2" data-feather="edit"></i>
-                        </button>
-                    </td>
-                </tr>
-            }
+        <tbody>           
         </tbody>
     </table>
 
 </div>
 
 @section JS
-    {      
+    {
     <script src="~/assets/js/custom/utils/nulooubranco.js"></script>
     <script src="~/assets/js/custom/utils/validacaocpf.js"></script>
     <script src="~/assets/js/custom/cadastro/cliente/index.js"></script>
