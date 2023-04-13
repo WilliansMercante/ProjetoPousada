@@ -159,10 +159,9 @@ namespace ProjetoPousada.IU.Web
 				endpoints.MapControllerRoute(
 				   name: "default",
 				   pattern: "{controller=Autenticar}/{action=Index}/{id?}"
-			   );
-
-				
+			   );				
 			});
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
