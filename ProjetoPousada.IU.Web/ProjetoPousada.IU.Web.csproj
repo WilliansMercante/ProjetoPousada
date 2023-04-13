@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
@@ -22,6 +22,13 @@
     <ProjectReference Include="..\ProjetoPousada.Dominio\ProjetoPousada.Dominio.csproj" />
     <ProjectReference Include="..\ProjetoPousada.IoC\ProjetoPousada.IoC.csproj" />
     <ProjectReference Include="..\ProjetoPousada.ViewModel\ProjetoPousada.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Config\Controllers\" />
+    <Folder Include="Areas\Config\Data\" />
+    <Folder Include="Areas\Config\Models\" />
+    <Folder Include="Areas\Config\Views\" />
   </ItemGroup>
 
 </Project>

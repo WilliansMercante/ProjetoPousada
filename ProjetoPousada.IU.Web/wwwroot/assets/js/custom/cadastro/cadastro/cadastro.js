@@ -3,7 +3,7 @@
     //Em caso de edição
     if ($("#Cliente_Id").val() > 0) {
 
-        let id = $("#Cliente_Id").val();
+        $("#btnCadastrar").text("Editar");
 
         let cpfSemFormatacao = $("#Cliente_CPF").val();
 
@@ -26,7 +26,7 @@
 
                             if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length > 0) {
 
-                                bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado e possui endereço e telefone");
+                                msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado e possui endereço e telefone");
                                 preencheIdCliente(retorno.oCliente.id)
                                 preencheCliente(retorno.oCliente)
                                 preparaEndereco();
@@ -37,7 +37,7 @@
 
                             } else if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length == 0) {
 
-                                bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
+                                msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
                                 $("#divMensagemPreenchimentoTelefone").text("Continue o preenchimento do telefone").css({ "color": "red" });
                                 preencheIdCliente(retorno.oCliente.id)
                                 preencheCliente(retorno.oCliente)
@@ -48,7 +48,7 @@
 
                             } else if (retorno.oCliente.enderecos.length == 0 && retorno.oCliente.telefones.length > 0) {
 
-                                bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
+                                msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
                                 $("#divMensagemPreenchimentoEndereco").text("Continue o preenchimento do endereço").css({ "color": "red" });
                                 preencheIdCliente(retorno.oCliente.id)
                                 preencheCliente(retorno.oCliente)
@@ -59,7 +59,7 @@
 
                             } else {
 
-                                bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
+                                msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
                                 $("#divMensagemPreenchimentoEndereco").text("Continue o preenchimento do endereço").css({ "color": "red" });
                                 $("#divMensagemPreenchimentoTelefone").text("Continue o preenchimento do telefone").css({ "color": "red" });
                                 preencheIdCliente(retorno.oCliente.id)
@@ -81,8 +81,6 @@
                     }
                 })
         }
-
-
     }
 
     //Máscaras
@@ -131,7 +129,6 @@
 
                                 if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length > 0) {
 
-                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado e possui endereço e telefone");
                                     preencheIdCliente(retorno.oCliente.id)
                                     preencheCliente(retorno.oCliente)
                                     preparaCadastro();
@@ -141,34 +138,37 @@
                                     atualizarTabelaTelefone(retorno.oCliente.id);
                                     $('#collapseOne').collapse();
                                     $('#collapseTwo').collapse();
+                                    msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado e possui endereço e telefone");
 
                                 } else if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length == 0) {
 
-                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
-                                    preencheIdCliente(retorno.oCliente.id)
-                                    preencheCliente(retorno.oCliente)
-                                    preparaCadastro();
-                                    preparaTelefone();
-                                    atualizarTabelaEndereco(retorno.oCliente.id);
-                                    $('#collapseTwo').collapse();
-
-                                } else if (retorno.oCliente.enderecos.length == 0 && retorno.oCliente.telefones.length > 0) {
-
-                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
                                     preencheIdCliente(retorno.oCliente.id)
                                     preencheCliente(retorno.oCliente)
                                     preparaCadastro();
                                     preparaEndereco();
+                                    preparaTelefone();
+                                    atualizarTabelaEndereco(retorno.oCliente.id);
+                                    $('#collapseTwo').collapse();
+                                    msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
+
+                                } else if (retorno.oCliente.enderecos.length == 0 && retorno.oCliente.telefones.length > 0) {
+
+                                    preencheIdCliente(retorno.oCliente.id)
+                                    preencheCliente(retorno.oCliente)
+                                    preparaCadastro();
+                                    preparaEndereco();
+                                    preparaTelefone();
                                     atualizarTabelaTelefone(retorno.oCliente.id);
                                     $('#collapseOne').collapse();
+                                    msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas Endereço");
 
                                 } else {
 
-                                    bootbox.alert("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
                                     preencheIdCliente(retorno.oCliente.id)
                                     preparaCadastro();
                                     preencheCliente(retorno.oCliente)
                                     preparaEnderecoTelefone();
+                                    msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados");
                                 }
 
                             } else {
@@ -179,16 +179,16 @@
                             }
 
                         } else {
-                            bootbox.alert(retorno.mensagem);
+                            msgAjax.erro("O Cliente <b>" + retorno.oCliente.nome + "</b> já esta Cadastrado, porém não possui endereço e telefone, por favor complete os dados"); (retorno.mensagem);
                         }
                     })
 
             } else {
-                bootbox.alert("CPF Inválido!")
+                msgAjax.alerta("CPF Inválido!")
             }
 
         } else {
-            bootbox.alert("Preencha o CPF!");
+            msgAjax.alerta("Preencha o CPF!");
         }
     });
 
@@ -223,17 +223,30 @@
                 if (retorno.flSucesso) {
 
                     preencheIdCliente(retorno.idCliente);
-                    bootbox.alert(retorno.mensagem);
-                    preparaEnderecoTelefone();
+
+                    if (!retorno.flEditar) {
+                        preparaEnderecoTelefone();
+                        travaCadastro();
+                    }
+
+                    msgAjax.sucesso(retorno.mensagem);
 
                 } else {
 
-                    bootbox.alert(retorno.mensagem);
+                    msgAjax.erro(retorno.mensagem);
 
                 }
             })
         }
     });
+
+    function travaCadastro() {
+
+        $("#Cliente_Nome").addClass("readonlyCliente");
+        $("#Cliente_DtNascimento").addClass("readonlyCliente");
+        $("#Cliente_IdSexo").addClass("readonlyCliente");
+        $("#Cliente_Rg").addClass("readonlyCliente");
+    }
 
     function preencheCliente(cliente) {
 
@@ -274,6 +287,12 @@
         $("#divBtnCadastrar").hide();
     }
 
+    $('#Endereco_Cep').keypress(function (e) {
+        if ((e.keyCode == 10) || (e.keyCode == 13)) {
+            $("#Endereco_Cep").blur();
+        }
+    });
+
     //busca CEP
     $("#Endereco_Cep").blur(function () {
 
@@ -287,20 +306,20 @@
                 $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
                     if (!("erro" in dados)) {
-                        $("#Endereco_Rua").val(dados.logradouro).attr('readonly', true);
-                        $("#Endereco_Bairro").val(dados.bairro).attr('readonly', true);
-                        $("#Endereco_Municipio").val(dados.localidade).attr('readonly', true);
-                        $("#Endereco_UF").val(dados.uf).attr('readonly', true);
+                        $("#Endereco_Rua").val(dados.logradouro).addClass('readonlyEndereco');
+                        $("#Endereco_Bairro").val(dados.bairro).addClass('readonlyEndereco');
+                        $("#Endereco_Municipio").val(dados.localidade).addClass('readonlyEndereco');
+                        $("#Endereco_UF").val(dados.uf).addClass('readonlyEndereco');
                     }
                     else {
-                        bootbox.alert("CEP não encontrado.");
+                        msgAjax.alerta("CEP não encontrado.");
                         limparDadosEnderecoCep();
                     }
                 });
 
             } else {
 
-                bootbox.alert("Formato de CEP inválido.");
+                msgAjax.erro("Formato de CEP inválido.");
                 limparDadosEnderecoCep();
             }
         } else {
@@ -369,13 +388,15 @@
 
             if (retorno.flSucesso) {
 
-                bootbox.alert(retorno.mensagem);
+                $("#divMensagemPreenchimentoEndereco").text("");
+                $(".readonlyEndereco").removeClass('readonlyEndereco')
+                msgAjax.sucesso(retorno.mensagem);
                 limparDadosEndereco();
                 atualizarTabelaEndereco(idCliente);
 
             } else {
 
-                bootbox.alert(retorno.mensagem);
+                msgAjax.erro(retorno.mensagem);
 
             }
         })
@@ -392,7 +413,7 @@
 
         }
         else {
-            bootbox.alert(retorno.mensagem);
+            msgAjax.erro(retorno.mensagem);
         }
     }
 
@@ -421,7 +442,7 @@
             novaLinha.append($('<td>').text(endereco.bairro));
             novaLinha.append($('<td>').text(endereco.municipio));
             novaLinha.append($('<td>').text(endereco.uf));
-            novaLinha.append($('<td>').text(moment(endereco.dtCadastro).format("DD/MM/YYYY, h:mm:ss")));
+            novaLinha.append($('<td>').text(moment(endereco.dtCadastro).format("DD/MM/YYYY HH:mm:ss")));
 
             // adiciona a linha à tabela
             tabela.append(novaLinha);
@@ -454,13 +475,14 @@
 
             if (retorno.flSucesso) {
 
-                bootbox.alert(retorno.mensagem);
+                $("#divMensagemPreenchimentoTelefone").text("");
+                msgAjax.sucesso(retorno.mensagem);
                 limparDadosTelefone();
                 atualizarTabelaTelefone(idCliente);
 
             } else {
 
-                bootbox.alert(retorno.mensagem);
+                msgAjax.erro(retorno.mensagem);
 
             }
         })
@@ -484,7 +506,7 @@
 
         }
         else {
-            bootbox.alert(retorno.mensagem);
+            msgAjax.erro(retorno.mensagem);
         }
     }
 
@@ -531,7 +553,7 @@
             }
 
             novaLinha.append($('<td>').text(telefone.flAtivo ? 'Sim' : 'Não'));
-            novaLinha.append($('<td>').text(moment(telefone.dtCadastro).format("DD/MM/YYYY, h:mm:ss")));
+            novaLinha.append($('<td>').text(moment(telefone.dtCadastro).format("DD/MM/YYYY HH:mm:ss")));
 
             // adiciona a linha à tabela
             tabela.append(novaLinha);

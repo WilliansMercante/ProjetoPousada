@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-2" style="display:none;" id="divBtnCadastrar">
             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrar" type="button">
-                <i class="align-middle me-2" data-feather="search"></i>
+                <i class="align-middle me-2" data-feather="user-plus"></i>
                 Cadastrar
             </button>
         </div>
@@ -73,7 +73,7 @@
 <br />
 
 <div id="divMensagemPreenchimentoEndereco"></div>
-<br />
+
 <div id="accordion">
     <div class="card">
         <div class="card-header" id="headingOne">
@@ -129,7 +129,7 @@
                         </div>
                         <div class="col-md-1" style="display:none;" id="divBtnCadastrarEndereco">
                             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarEndereco" type="button">
-                                <i class="align-middle me-2" data-feather="search"></i>
+                                <i class="align-middle me-2" data-feather="plus-circle"></i>
                                 Cadastrar Endereço
                             </button>
                         </div>
@@ -137,29 +137,28 @@
                 </form>
             </div>
 
-            <div style="display: none;" id="divTbEndereco">
-                <table id="tbEndereco" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Tipo de Endereço:</th>
-                            <th>Rua:</th>
-                            <th>Número:</th>
-                            <th>Ativo:</th>
-                            <th>Bairro:</th>
-                            <th>Município:</th>
-                            <th>UF:</th>
-                            <th>Data de Cadastro:</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table table-bordered table-striped">                     
-                    </tbody>
-                </table>
-            </div>
-
+        </div>
+        <div style="display: none;" id="divTbEndereco" class="card-body">
+            <table id="tbEndereco" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Tipo de Endereço:</th>
+                        <th>Rua:</th>
+                        <th>Número:</th>
+                        <th>Ativo:</th>
+                        <th>Bairro:</th>
+                        <th>Município:</th>
+                        <th>UF:</th>
+                        <th>Data de Cadastro:</th>
+                    </tr>
+                </thead>
+                <tbody class="table table-bordered table-striped">
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <div id="divMensagemPreenchimentoTelefone"></div>  
+    <div id="divMensagemPreenchimentoTelefone"></div>
 
     <div class="card">
         <div class="card-header" id="headingTwo">
@@ -190,7 +189,7 @@
                         </div>
                         <div class="col-md-1" style="display:none;" id="divBtnCadastrarTelefone">
                             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarTelefone" type="button">
-                                <i class="align-middle me-2" data-feather="search"></i>
+                                <i class="align-middle me-2" data-feather="plus-circle"></i>
                                 Cadastrar Telefone
                             </button>
                         </div>
@@ -198,8 +197,8 @@
                 </form>
             </div>
         </div>
-        <div style="display: none;" id="divTbTelefone">
-            <table id="tbTelefone" class="table table-bordered">
+        <div style="display: none;" id="divTbTelefone" class="card-body">
+            <table id="tbTelefone" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Tipo de Telefone:</th>

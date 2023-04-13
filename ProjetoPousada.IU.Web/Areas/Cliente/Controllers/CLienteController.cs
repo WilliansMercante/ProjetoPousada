@@ -59,19 +59,17 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
         [HttpGet]
         [Route("Pesquisar")]
         public JsonResult Pesquisar(string nome, string cpf, DateTime? dtNascimento)
-        {
-            IEnumerable<ClienteViewModel> lstClientesVM = new List<ClienteViewModel>();
+        {            
 
             try
             {
-                lstClientesVM = _clienteApp.Consultar(nome, cpf, dtNascimento);
+                var lstClientesVM = _clienteApp.Consultar(nome, cpf, dtNascimento);
+                return Json(new { flSucesso = true, lstClientes = lstClientesVM });
             }
             catch (Exception ex)
             {
                 return Json(new { flSucesso = false, mensagem = ex.Message });
-            }
-
-            return Json(new { flSucesso = true, lstClientes = lstClientesVM });
+            }            
         }
 
 
@@ -121,13 +119,13 @@ namespace ProjetoPousada.IU.Web.Areas.Cadastro.Controllers
                 if (clienteVM.Id > 0)
                 {
                     _clienteApp.Atualizar(clienteVM);
-                    return Json(new { FlSucesso = true, Mensagem = "Dados alterados com sucesso!", IdCliente = clienteVM.Id });
+                    return Json(new { FlSucesso = true, Mensagem = "Dados alterados com sucesso!", IdCliente = clienteVM.Id, FlEditar = true });
                 }
 
                 else
                 {
                     clienteVM.Id = _clienteApp.Incluir(clienteVM);
-                    return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = clienteVM.Id });
+                    return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = clienteVM.Id, FlEditar = false });
                 }
 
             }

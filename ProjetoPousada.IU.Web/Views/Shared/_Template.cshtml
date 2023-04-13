@@ -32,7 +32,7 @@
     <link href="~/assets/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    
+
     @RenderSection("CSS", required: false)
 
 </head>
@@ -60,7 +60,7 @@
                             {
                                 <li class="sidebar-item">
                                     <a class="sidebar-link" href="@Url.ActionLink(subItem.NmAction, subItem.NmController, new { Area = subItem.NmArea })">
-                                        <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">@subItem.NmItem</span>
+                                        <i class="align-middle" data-feather=@subItem.ClassIcon></i> <span class="align-middle">@subItem.NmItem</span>
                                     </a>
                                 </li>
                             }
@@ -86,20 +86,18 @@
                             </a>
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Log out</a>
+                            <div class="dropdown-menu dropdown-menu-end">  
+                                <a class="dropdown-item" href="/Autenticar/Logout/">Sair</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
             <main class="content">
+
+                <div id="mensagemAjax" style="display:none;">
+                    <partial name="_mensagemAjax" />
+                </div>        
 
                 @if (TempData["Sucesso"] != null)
                 {
@@ -158,7 +156,7 @@
     <script src="~/assets/js/jquerymask/jquery.mask.min.js"></script>
     <script src="~/assets/js/custom/utils/formatadatahtmldate.js"></script>
 
-    <script type="text/javascript">        
+    <script type="text/javascript">
 
         $(window).on('load', function () {
             // Animate loader off screen
@@ -180,6 +178,42 @@
             $(".loading").fadeIn();
             $("body").fadeOut("slow");
         });
+  
+        const msgAjax = {
+
+            sucesso: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Sucesso! ");
+                $(".alertaAjax").addClass('alert-success');
+                $("#mensagemAjax").show();  
+                retiraMsgAjax('alert-success');
+            },
+            alerta: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Atenção! ");
+                $(".alertaAjax").addClass('alert-warning');
+                $("#mensagemAjax").show();
+                retiraMsgAjax('alert-warning');
+            },
+            erro: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Erro! ");
+                $(".alertaAjax").addClass('alert-danger');
+                $("#mensagemAjax").show();
+                retiraMsgAjax('alert-danger');
+            }
+        };
+
+        function retiraMsgAjax(classeARemover){
+            let fade_out = function () {
+                $("#mensagemAjax").fadeOut().hide(); 
+                $("#ajaxTitulo").html("");
+                $("#msgAjax").html("");
+                $(".alertaAjax").removeClass(classeARemover);
+            }
+            setTimeout(fade_out, 5000);
+        }        
+
     </script>
 
     @RenderSection("JS", required: false)

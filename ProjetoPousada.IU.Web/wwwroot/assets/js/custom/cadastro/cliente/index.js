@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
 
+    
+
     $("#btnPesquisar").off('click').on('click', function () {
 
         let nome = $("#Cliente_Nome").val();
@@ -17,7 +19,7 @@
                     preencheTabelaAtendimento(true, retorno.lstClientes);
 
                 } else {
-                    bootbox.alert(retorno.mensagem);
+                    msgAjax.erro(retorno.mensagem);
                 }
             })
 
@@ -51,7 +53,7 @@
             novaLinha.append($('<td>').text(cliente.rg ? cliente.rg : ''));
             novaLinha.append($('<td>').text(cliente.sexo.sexo));
             novaLinha.append($(cliente.flAtivo ? '<td class="text-center" style="color: blue;"  title="Ativo"> <i class="text-center" data-feather="thumbs-up" ></i> <span class="text-center"></span></td>' : '<td class="text-center" style="color: red;" title="Inativo"> <i class="text-center" data-feather="thumbs-down"></i> <span class="text-center"></span></td>'));
-            novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY h:mm:ss")));
+            novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY HH:mm:ss")));
             novaLinha.append($('<td>').html('<a style="width:40px; height:40px" class="editar btn btn-warning bd-placeholder-img rounded-circle" title="Editar" href="/Cliente/Cliente/Editar/' + cliente.id + '"><i style="margin-top: 2px; margin-left: -1px;" class="align-middle me-2" data-feather="edit"></i></a>'));
 
             // adiciona a linha à tabela

@@ -84,7 +84,7 @@ namespace ProjetoPousada.IU.Web.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Route("Logout")]
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync();
