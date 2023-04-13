@@ -169,7 +169,6 @@ namespace ProjetoPousada.IU.Web
                   name: "areas",
                   pattern: "{area:exists}/{controller}/{action}/{id?}"
                 );
-                //endpoints.MapControllers();
             });
         }
 	}
