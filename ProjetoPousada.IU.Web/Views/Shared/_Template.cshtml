@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
     <meta name="author" content="AdminKit">
     <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
@@ -86,7 +86,7 @@
                             </a>
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end">  
+                            <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="/Autenticar/Logout/">Sair</a>
                             </div>
                         </li>
@@ -94,10 +94,14 @@
                 </div>
             </nav>
             <main class="content">
+                <div id="mensagemAjax">
+                    <div class="row divAlerta">
+                        <div class="col-md-12">
+                            <partial name="_mensagemAjax" />
+                        </div>
+                    </div>
+                </div>
 
-                <div id="mensagemAjax" style="display:none;">
-                    <partial name="_mensagemAjax" />
-                </div>        
 
                 @if (TempData["Sucesso"] != null)
                 {
@@ -178,41 +182,50 @@
             $(".loading").fadeIn();
             $("body").fadeOut("slow");
         });
-  
+
         const msgAjax = {
 
             sucesso: function (mensagem) {
                 $("#msgAjax").html(mensagem);
                 $("#ajaxTitulo").html("Sucesso! ");
                 $(".alertaAjax").addClass('alert-success');
-                $("#mensagemAjax").show();  
+                $("#teste").show();
                 retiraMsgAjax('alert-success');
             },
             alerta: function (mensagem) {
                 $("#msgAjax").html(mensagem);
                 $("#ajaxTitulo").html("Atenção! ");
                 $(".alertaAjax").addClass('alert-warning');
-                $("#mensagemAjax").show();
+                $("#teste").show();
                 retiraMsgAjax('alert-warning');
             },
             erro: function (mensagem) {
                 $("#msgAjax").html(mensagem);
                 $("#ajaxTitulo").html("Erro! ");
                 $(".alertaAjax").addClass('alert-danger');
-                $("#mensagemAjax").show();
+                $("#teste").show();
                 retiraMsgAjax('alert-danger');
             }
         };
 
-        function retiraMsgAjax(classeARemover){
+        function retiraMsgAjax(classeARemover) {
             let fade_out = function () {
-                $("#mensagemAjax").fadeOut().hide(); 
-                $("#ajaxTitulo").html("");
-                $("#msgAjax").html("");
-                $(".alertaAjax").removeClass(classeARemover);
+                $("#mensagemAjax").removeClass("pula").addClass("sobe");
+                setTimeout(function () {
+                    will(classeARemover)
+                }, 700);
+
             }
             setTimeout(fade_out, 5000);
-        }        
+        }
+
+        function will(classeARemover) {
+            $("#teste").fadeOut().hide();
+            $("#ajaxTitulo").html("");
+            $("#msgAjax").html("");
+            $(".alertaAjax").removeClass(classeARemover);
+            $("#mensagemAjax").removeClass("sobe");
+        }
 
     </script>
 

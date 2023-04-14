@@ -1,4 +1,80 @@
-﻿<div class="alert alert-dismissible fade show alertaAjax" style="margin-top: -25px;" role="alert">
+﻿<style>
+    @@keyframes animaBox {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 1;
+            transform: translateY(-45px);
+        }
+
+        24% {
+            opacity: 1;
+        }
+
+        40% {
+            animation-timing-function: ease-in;
+            transform: translateY(-24px);
+        }
+
+        65% {
+            animation-timing-function: ease-in;
+            transform: translateY(-12px);
+        }
+
+        82% {
+            animation-timing-function: ease-in;
+            transform: translateY(-6px);
+        }
+
+        93% {
+            animation-timing-function: ease-in;
+            transform: translateY(-4px);
+        }
+
+        25%,
+        55%,
+        75%,
+        87% {
+            animation-timing-function: ease-out;
+            transform: translateY(0px);
+        }
+
+        100% {
+            animation-timing-function: ease-out;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @@keyframes myAnim {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+    }
+
+    .pula {
+        animation: animaBox 3s linear 0s 1 normal none;
+    }
+
+    .sobe {
+        animation: myAnim 1s ease 0s 1 normal backwards;
+    }
+
+    @@media (max-width: 992px) {
+        .divAlerta {
+            margin-right: 3%!important;
+        }
+    }
+
+</style>
+
+<div id="teste" class="alert alert-dismissible fade show alertaAjax pula" style="display:none; z-index: 2;position: absolute;width: 99%!important; margin-top: -47px;box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.62); " role="alert">
+
     <strong id="ajaxTitulo"></strong>&ensp;-&ensp;<span id="msgAjax"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>

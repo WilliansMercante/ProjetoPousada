@@ -169,6 +169,14 @@ namespace ProjetoPousada.IU.Web
                   pattern: "{area:exists}/{controller}/{action}/{id?}"
                 );
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "Config",
+                  pattern: "{area:Config}/{controller=Usuario}/{action=Index}/{id?}"
+                );
+            });
         }
 	}
 }

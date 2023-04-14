@@ -28,9 +28,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-	name: "default",
-	pattern: "{controller}/{action}/{id?}");
+//app.MapControllerRoute(
+//	name: "default",
+//	pattern: "{controller}/{action}/{id?}");
 
 app.MapGet("/", context =>
 {

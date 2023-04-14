@@ -33,8 +33,7 @@
                                 preparaTelefone();
                                 atualizarTabelaEndereco(retorno.oCliente.id);
                                 atualizarTabelaTelefone(retorno.oCliente.id);
-                                $('.collapse').collapse();
-
+                                abrirCadastros();
                             } else if (retorno.oCliente.enderecos.length > 0 && retorno.oCliente.telefones.length == 0) {
 
                                 msgAjax.alerta("O Cliente <b>" + retorno.oCliente.nome + "</b> já está Cadastrado, faltando apenas telefone");
@@ -558,5 +557,10 @@
             // adiciona a linha à tabela
             tabela.append(novaLinha);
         });
+    }
+
+    function abrirCadastros() {
+        $('#collapseOne').collapse();
+        $('#collapseTwo').collapse();
     }
 });

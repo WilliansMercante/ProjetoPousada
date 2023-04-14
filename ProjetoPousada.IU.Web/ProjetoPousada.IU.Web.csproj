@@ -24,11 +24,4 @@
     <ProjectReference Include="..\ProjetoPousada.ViewModel\ProjetoPousada.ViewModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Config\Controllers\" />
-    <Folder Include="Areas\Config\Data\" />
-    <Folder Include="Areas\Config\Models\" />
-    <Folder Include="Areas\Config\Views\" />
-  </ItemGroup>
-
 </Project>

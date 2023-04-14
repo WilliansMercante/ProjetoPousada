@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Areas/Config/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29uZmlnXFZpZXdzXFVzdWFyaW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/TestesCSharp/ProjetoPousada/ProjetoPousada.IU.Web/Views/Autenticar/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0ZW50aWNhclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -15,6 +15,6 @@ namespace ProjetoPousada.Infra.Repositories.Config
         public UsuarioEntity Autenticar(string cpf, string senha)
         {
             return _context.Usuario.Include(p => p.Grupo).FirstOrDefault(p => p.Cpf.Equals(cpf) && p.Senha.Equals(senha));
-        }     
+        }
     }
 }
